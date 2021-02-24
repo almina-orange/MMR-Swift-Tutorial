@@ -1,0 +1,2180 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00D41876CF485D3A9CC3B7F0CA011411 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */; };
+		0562229E03E8C098F78E75CDA37BC2A1 /* SecureDFUPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42C30205F8526E80893BDED99EF567 /* SecureDFUPeripheralDelegate.swift */; };
+		0ACF45BCC7E9E42588E92BB6D2A037F5 /* FileManager+ZIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEB735721786E1D7DD407E1B5D0912 /* FileManager+ZIP.swift */; };
+		1158161FDFF9498BE35C1DE3ACB4D58C /* DFUStreamHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECDB2372DD2A3E023AE7A284F5CEFF7 /* DFUStreamHex.swift */; };
+		125A548FF3D53833703E89351DCADF1F /* crc32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857F1FB26DE687B6232BA3BD024E554 /* crc32.swift */; };
+		1266E223EF7D2F8C9FB1ACF3BFEFE0E1 /* ZipArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F0B0A4825DA0D9045635619C0D1E5A /* ZipArchive.swift */; };
+		13A3BFFEB290F056685F587D6A9D0EEF /* humidity_bme280.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACB606C56576590EE2DB4F43DBCA03ED /* humidity_bme280.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		14437DA8A5054F302AB7BE2E1FB4157B /* LogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4006A04FA02580744D023A41999AD53 /* LogDelegate.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		15EA608FDC5B8317C9E1B16F83D1FC07 /* macro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBB0BF7BB4B90849DA1DA4A7C170D9F3 /* macro.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		169A9DB52F6476D00800D86812CC3E03 /* LegacyDFUPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C5053CDD937B369D33C2B9F8A2C99 /* LegacyDFUPeripheral.swift */; };
+		18282E087A8BEA6A34CCD9CD7098E419 /* ambientlight_ltr329.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF27533D927258D021D0901B501D57D0 /* ambientlight_ltr329.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		1868A2015A74F904EF1E46279DC3957B /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A0C243A88FA8D3BD9A2A748D950765C /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18E114A5E7E31FC68BC5657362A9218E /* SecureDFUPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327EB680B02B178FDC4256F2F3006879 /* SecureDFUPeripheral.swift */; };
+		19926E825C384DA2D7AACDCCDF1D48C7 /* iOSDFULibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67405365AE670460C15BF73EF114E243 /* iOSDFULibrary.framework */; };
+		1BFCC01DE4DBD5E1B935BEEB05EC1D0B /* accelerometer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83C9E72E15D84717B4881FDEBC57AA9F /* accelerometer.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		1C616CFFD9F386163F090BE8D9A6E6AE /* SecureDFUControlPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE6A8E27FA47D09B614BD9D8E0E50E /* SecureDFUControlPoint.swift */; };
+		1D5FA5EDA37E8A8661BF48B32B09EB33 /* LegacyDFUPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3456A3583E5D79787160AF47AD61288 /* LegacyDFUPeripheralDelegate.swift */; };
+		1D7538718EBF49139E5AF58A5CE862D0 /* MetaWearScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D20035A8E3B68E5F50BD4ED41C1A50 /* MetaWearScanner.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		1E1279DC13CE26B18442115844EF9D06 /* MetaWear+LED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254C889B7358A85A865E1B83D10707A1 /* MetaWear+LED.swift */; };
+		2425DAE6BEB6A31E286C45B5EAA68225 /* dfu_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C9258F7CFA9AEB04F9435D509FA86F4 /* dfu_utility.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		25A6239D3392F3F1E7E87AED443369FA /* DFUPeripheralSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95A2F6A1011AC764471FAFC5F47BBFD /* DFUPeripheralSelectorDelegate.swift */; };
+		2AEBD1E4E99CFA736A749D3DFB843E96 /* SecureDFUExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD8BCFF67D29ED6D76E535D6257E090 /* SecureDFUExecutor.swift */; };
+		2AEE39D238B243B63595F57F41AEA411 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */; };
+		2DEF40D733DE5C02033E5F43B245931B /* Archive+Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC32BA6BE9429C6B62A7C569074FDF /* Archive+Writing.swift */; };
+		2E38D11C9C7EF32EC1356EA7BF0D0F4E /* accelerometer_bosch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3CD22A795FEC9C8E96CBE44907062C5 /* accelerometer_bosch.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		2E6A357BB37A207536AF41B4A612C7D9 /* cbindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CBF49D55E67945F4F7A998C76190F /* cbindings.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		2EEAEF1C950D23B56AC0D4101B97D2B2 /* iOSDFULibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5AC5D106363AE5FEB71D0010B4EF08 /* iOSDFULibrary-dummy.m */; };
+		368CB12B134FDFD37A3CFCBA31E9E001 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA71A5658DB6BB0E21CC59AEBF81C8 /* Double.swift */; };
+		36A2944A6A09F6C88681F34FE90CB792 /* DFUPeripheralSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F24E3B67E7A079D92B8610236B607 /* DFUPeripheralSelector.swift */; };
+		3704D5A08069ACD7953E9D49FB1E4107 /* DFUPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F275E38E38FD638FE271B0D5ACA5C7B /* DFUPeripheralDelegate.swift */; };
+		3776AD5B91BD314EAAC1C49A74AB78D9 /* LegacyDFUExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65D07EE311992A4817BA880E4098E3 /* LegacyDFUExecutor.swift */; };
+		3854C0BF7A13EC7DF3C740EDE5EA0DE4 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69876F026266ED979F1B48EFE0387DF0 /* Executor.swift */; };
+		39EA507A5A5D096BECF61CF10588B301 /* MetaWear-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE38CDA3BB03C60C81E00861AC3F196A /* MetaWear-dummy.m */; };
+		3A0C6B20D5D7000391117B84F7A3E991 /* proximity_tsl2671.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1446F44905D5FB1B6FF4641405FC8C /* proximity_tsl2671.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		3CEDC0D8A94B6393ECE9EC38ECC8F611 /* serialpassthrough.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E263B8416FF16D87FDB46B7158244573 /* serialpassthrough.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		3E05DD904699E50A6249950CFE576365 /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5FF7F9EA9602E6BCF151B1C7D36CAA /* Archive.swift */; };
+		40B064C3B185514B37E5BFB6B5E94C5F /* version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6068D17E1D9D9146923EE6285413C8BE /* version.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		42A1F877667560B594B0CC6C865C78F9 /* LegacyDFUServiceInitiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2082153E651B9C89E45D1DC01A81979 /* LegacyDFUServiceInitiator.swift */; };
+		437DC765FEFA8B1DA46F1B08AA6DDA26 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4CBEEE834ABBB448134740C6F322C39 /* event.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		43CC0688726069DB5B89F8A59ADCCB72 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 602DD4D0218D70B93EE6C158816F9677 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-dummy.m */; };
+		47DF2EE9A3CF8AF785BCD11728A6ADAF /* DFUStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB864EA109E596A43DF76152DCF87F /* DFUStream.swift */; };
+		4985ABA3073A063F57C0FC3844A5425A /* MblMwEvent+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E256DE234CB05D93EE4FA73CBB548 /* MblMwEvent+Async.swift */; };
+		4B07D61AAF4FA6E719A5B8A592C976BB /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B420258AEEA66A4004F3C879700D70AE /* debug.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		4E854C7F5B21372357E7B148FB9985F8 /* settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E646A383570D094757FC022D5A76A6AD /* settings.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		50016290BB89491EBB41DD177AFF326D /* moduleinfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F9A6FAC8F6934DD28171510B30F418D /* moduleinfo.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		500185FD18EE4387BA8613DE4012916F /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8A511677B1814C3722242524ACB51 /* Entry.swift */; };
+		51E4FB6F98A49E8CAD3D6A184848D4D1 /* Pods-MMR-Swift-Tutorial-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8722755D4C095EE0EB6EF8DBDCD54A /* Pods-MMR-Swift-Tutorial-dummy.m */; };
+		52B8275D2CF369551F3CC746398A106C /* Task+Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81541EFD1850F4DEF4085A6FC8CE065E /* Task+Delay.swift */; };
+		53498891A1CAE81001C5A8C4B065D61B /* DFUVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F603B82C0E5852C90F4C91D5EF405 /* DFUVersion.swift */; };
+		542993C1EE32314BB844CB51B583E079 /* miniz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C2CB51344171C6E11816C82F871EE8D /* miniz.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		552CB2A6FEFD51F4AF0CBFCF5A94F414 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA4701BAAB06C24139B9C2B8BE5AC64 /* Task.swift */; };
+		55C3D72955203577F24CBE4501D13550 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */; };
+		58238DF343D85ABCBEAC753C5289FE23 /* MblMwDataSignal+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3064E34D3E822D1A13FF98A7AD320 /* MblMwDataSignal+Async.swift */; };
+		590D3A57F551FD6CBCEBA49A4F38E728 /* Data+Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0B8189115B01003B544D2FE2A8003 /* Data+Serialization.swift */; };
+		59BA42567787E5CEEE639140D13E87B2 /* DFUServiceInitiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802828F7B11944666401C02F8DAACA58 /* DFUServiceInitiator.swift */; };
+		5AB8B258535F29AD11CBA978F0672710 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */; };
+		5C191F4BBC4B2860BB19E55B5463F7F2 /* accelerometer_mma8452q.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 096C0A6A4973F632767FAE2AB27D87E0 /* accelerometer_mma8452q.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		5C4AE18DA97FBB5A3D931DB963FB38F3 /* conductance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16DE135C9B92BFEA56910D09E83D2C2D /* conductance.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		5D23B2F0B071931168B65C8E08A43D96 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */; };
+		5D66DF938C9BDF3C213F899D4DB9A3A4 /* Bolts-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E2C618EB7EEB99289F5686B2F41E12 /* Bolts-Swift-dummy.m */; };
+		5DB64EB90726854C27B2ADD4631E6A04 /* DFUControlPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6E9CAA8A630BC19B2C8AB99D13E60 /* DFUControlPoint.swift */; };
+		5DDF6F5E02C919C410CB438D7B99DCD5 /* task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83F043A9D35B6A8872F99249B54F54CE /* task.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		6372092B8CB40773F2E1E3E807392698 /* BoltsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBBDD4025F81F1AE16492E22F87799B /* BoltsSwift.framework */; };
+		6501D7D5D863EADF96E13F3D62A26DA9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */; };
+		66D02D1A2269962D6CE65673CF601511 /* Task+ContinueWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B23EADFEAF607F5C6E639378AC8E46 /* Task+ContinueWith.swift */; };
+		67A2F1985397603972B33BD8252FB96E /* metawearboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF3BDD4FF48266036CD960F145D7843 /* metawearboard.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		68258A8CF4D13E31C8F1F844B207F054 /* DFUPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF76121B54DFC2901E1DEA2BE018F13A /* DFUPacket.swift */; };
+		6871191B07F625C38CB9CE5F4A99E899 /* Pods-MMR-Swift-TutorialTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F6AF808D5948BFD1F4EACFFB0683C57 /* Pods-MMR-Swift-TutorialTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68E45B8CCA8C415952934FD26B7DBF5E /* DFUExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A3FA9965A9BB6296DA0C67AB280A7 /* DFUExecutor.swift */; };
+		68E919441075A24AB7FC3D5514249E7D /* DFUStarterPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E4467570B5825072A5307E223D6F4 /* DFUStarterPeripheral.swift */; };
+		6998626DF848422F3EE1013747F23E0B /* String+VersionCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726E6BF1DA3FCE0502D528FB02EC246 /* String+VersionCompare.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		6D5110F313EA5DDA0E8520196757D2C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */; };
+		6DF35730D0DB7708D93FED45BD72B705 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D86E63758C00D55889FD6114058A57D /* Data.swift */; };
+		6FC9A4F1644D56671E43BC6F85251E41 /* ButtonlessDFU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B617C6FDB7FF09C11DDBCA6EC3DF3 /* ButtonlessDFU.swift */; };
+		73B3F4EBE4172207B2B20B94A532C313 /* IntelHex2BinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B483F8899AFCF777F7B2F66E1C9A8AC /* IntelHex2BinConverter.swift */; };
+		7729AB2FFD6B941FAE7F0940692C9172 /* SecureDFUPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77331ABE4BE6E6A314EE04A6EFE835D /* SecureDFUPacket.swift */; };
+		7772ACAB44BDC501C2BE20244B576F5E /* Task+WhenAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980DCD857F54DE51D1CC25BD3DFE111F /* Task+WhenAll.swift */; };
+		777A3AACDC4B2E9402C9C3FDD05AEFA6 /* DFUService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC434B81C246E44EA6750F1654E75ED /* DFUService.swift */; };
+		79EAA6690003ACB8732AAAA49A4F6AC8 /* datasignal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA7140EF363EE9D269808B020BB1FA /* datasignal.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		7D123461A3F15E0CF02067277B340B06 /* ManifestFirmwareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F116FC33607399B874C7E6ECD5369D /* ManifestFirmwareInfo.swift */; };
+		7D6AF38010FFD809CF4A5FECB5BD7E4B /* responseheader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43A8656B70993191445A2FF63A414A42 /* responseheader.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		8333979DBD99326D60C9BDFE21CF7F01 /* sensor_fusion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F09421C8399D8D19DFAF4A8A22CD51F /* sensor_fusion.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		84E49AA4AEBF2D359BE494195AA77EF3 /* Task+WhenAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAA3E3639AF2871458B0F887196001 /* Task+WhenAny.swift */; };
+		86C316EBB8869866A0C624D2AAE08C70 /* barometer_bosch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FB462C1C58E44CE9D72AB8F2A683EB9 /* barometer_bosch.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		87C8A17FDF19103DBC3A2D325F60CD0B /* dataprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF523F522374FE3DDEA7D2315C371467 /* dataprocessor.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		88E18AE13E8C51259DB5B1D34D193AB0 /* magnetometer_bmm150.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A799AD63733873924B8E382DEA02C262 /* magnetometer_bmm150.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		8D2A10CB374DFE57C0D8F0F802C9E6EE /* TaskCompletionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608CDBE743C13679A29584093A4A2D0 /* TaskCompletionSource.swift */; };
+		8DA366AE9C919F4904A76954BFB6D9BD /* FirmwareServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE6CC9C5974E4BF0BC08F74157BDFF /* FirmwareServer.swift */; };
+		8DD3FF9DD5D11671AC810317CF746E82 /* MetaWear+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46DF8F501AF521AB21685F7B67EDC43 /* MetaWear+Async.swift */; };
+		903D4213A0BCA654098D896172AAE3CB /* DFUServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FED06DA391311281CF4615E1C67C0FC /* DFUServiceController.swift */; };
+		9101A41D09693426AE468BA928522AD3 /* ZIPFoundation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B15DEE4DAB89D80BD369E5E9B4E8B0F /* ZIPFoundation-dummy.m */; };
+		974D2769A7C93E420F21FE3B48075280 /* CBUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D148CA9AAF154EDD960651E24E8D0 /* CBUUID.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		9908892E3C2C364F924AC9D57F675606 /* LegacyDFUService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF88D62CE5C8495AE591826DF032414 /* LegacyDFUService.swift */; };
+		9BF8DC92724BDB9FFEC333D5CBE78D15 /* neopixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69653A4459DD2877ABB338E5937A90CE /* neopixel.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		9D8F6339DCF1D4CA859A7275E488AB2B /* MetaWear-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8ED6B569C42E5B8A04EF52DADBFE70 /* MetaWear-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E7058AE536A0791E9644B1695E75E23 /* Pods-MMR-Swift-Tutorial-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DA16FCA7EF5E50DEEF1F0EED66159F4 /* Pods-MMR-Swift-Tutorial-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F54E6D184BFF03C949C4514EEC6D329 /* colordetector_tcs34725.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62FE85550C1C0CBA624D9F9F07461FE3 /* colordetector_tcs34725.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		AAA26256C943FC20C722463457D55C02 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7FEFDAFA55585B1AFC420EF1123B1C /* CoreBluetooth.framework */; };
+		AAB178FA94AF79A5AC2225A80B8115F5 /* ZIPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2414E78B0FD59F3870D2C0BD0CB73029 /* ZIPFoundation.framework */; };
+		AB29A2F589A8FE56D09EA33571A18A54 /* FirmwareBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD047E9B04A35485D4F94592CDCDC700 /* FirmwareBuild.swift */; };
+		ABD0D51AD4BB95DD1C90D40826A911A4 /* Pods-MMR-Swift-TutorialTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F78AE717D0D39FF354B43E5A21A886A8 /* Pods-MMR-Swift-TutorialTests-dummy.m */; };
+		AF47468436110BF82E1EAC88241E54C7 /* iOSDFULibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA001B0E2B5E8D9F4132DC2593CCC8B0 /* iOSDFULibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFEDE3197DB0C152DCF76E3584F9C1BA /* memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A3872080F6301249AC6F030125B0E6 /* memory.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		B0B2C9F6F74ED8451A45DBE9158A3FB7 /* LoggerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2189B082629B5B0185D3389FF1A66A23 /* LoggerHelper.swift */; };
+		B20C62A90FCA3CB70BCC3F919125E501 /* haptic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9CA57091DA70EF494CA9E637787F018 /* haptic.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		B2B6875B5DB9CAEB05C867DC0EBE1452 /* MetaWear+Firmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED0F0D053B4BB815D579C7F6D02E1B /* MetaWear+Firmware.swift */; };
+		B448B2CC83BE6BFF622B906A583AC3EB /* dfu_operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6F358198646AD279A7BF7A01815D8AD /* dfu_operations.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		B5AAE56A027096929EDDEA62670BC358 /* file_operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1D5DBE5E57C8C1A753F5C841B8A7392 /* file_operations.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		B80155B51466585695043C837FF8C836 /* DFUUuidHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D2F1E7BB626BBA506E4F772EDA73A /* DFUUuidHelper.swift */; };
+		BBC71ECDC3AF6442A5547163F81693C1 /* dataprocessor_config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B63D8CBD70D725BC88381D6A3E647274 /* dataprocessor_config.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		BD21015DE840BBB0743D331F2155B0E6 /* DFUController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C23B49B0188A3EEA2E7965DD5FB720 /* DFUController.swift */; };
+		BDE61C8A837786AAEEF632BB74FA50B1 /* SecureDFUService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EBE6F9C983B5B0A097A4593C0E0629 /* SecureDFUService.swift */; };
+		BED23FE71A07D2991B60DDB1B462FDE7 /* led.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E10E1854BE9E662DA9275DCEA0F6C /* led.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		C05CE6FEE34993DC2BAAE6114628B223 /* DFUStreamZip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD85021AD087BB26F1BB965581F0DA8 /* DFUStreamZip.swift */; };
+		C0BE3A9E47F29136E6BC3C1CC2E1BCF8 /* DFUPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416C6D93294185FD8FF9C31AD94078C4 /* DFUPeripheral.swift */; };
+		C6AECBDC89EC0EBFA7364D09A864AF79 /* DFUFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2600AC95850D2B3A98C7603D2D0EE /* DFUFirmware.swift */; };
+		CC4C2DF118A1E1A0701DF8917ED5E849 /* MetaWear+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B99B62F42E1FA44931F8DCA5C60664F /* MetaWear+Mock.swift */; };
+		CCC264CC3A173962066C6E06541665EF /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E5D879B4B1AE246D8BE2248D60C5A /* DeviceInformation.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		CCCB78B539252997BB8C1912EC533463 /* ScannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288D3135F9CA4F99DC2733774C199BE6 /* ScannerModel.swift */; };
+		CD0B4F1F0BDC22B944BA2B0AD20808E6 /* Bolts-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB60A100C876217B0592AD016A6DEC7 /* Bolts-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDE710AEBC6B0C7C3C5AEA11CF6DD542 /* gpio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DE12D6F2CE94502B821E58FD2664A94 /* gpio.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		D076CB4AB0F62EB9BECC5911AC9464F3 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E79A8DAD2CFB6932DE688C651FCD008D /* timer.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		D141AD7B1C8B8D419245F72F0A7E12BC /* DFUStreamBin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69282D03CA22274B470BF390FF278C0 /* DFUStreamBin.swift */; };
+		D32EC02A2CD3F4729F905DB7D9A6F509 /* MblMwGattChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4BFA457A1F01028FAB04E6992C5021 /* MblMwGattChar.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		D39EC93B8A212B1C86C00CA846123546 /* MockModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0E7488723C95E89C14025E89EF322 /* MockModule.swift */; };
+		D6D6A18618833FA80DE99AAF3D6593E3 /* SecureDFUServiceInitiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FEA7BCF7BA8A8BB3D8A2A792235E5A /* SecureDFUServiceInitiator.swift */; };
+		D71E35DC3D81AF8DC3FA143383A25913 /* switch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A86F543792981A874131E8759334EC0 /* switch.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		DB7412AEE4187509B1CE50ACDC42861E /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 037AC051FD3CCA959F9FAEBD131FDDDA /* utils.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		DF08090F30C7D133BFC3B4C78CB1CC91 /* MetaWearData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2813EC1E76417A681F5E54913943F9 /* MetaWearData.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		E07AE62C0698CDBA95E2286846A8F01C /* DFUCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1E02063DCD3B5A02DCB94F0D307427 /* DFUCharacteristic.swift */; };
+		E10B89018271E8CDD83048188D760639 /* gyro_bmi160.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71CB62C784231EBB0608C979EF2424D6 /* gyro_bmi160.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		E11A19B82E91C1A42B7885E81B68F8B8 /* SoftdeviceBootloaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DC2E74785E2928290ED52FF03BB34 /* SoftdeviceBootloaderInfo.swift */; };
+		E1C79764C092B880D39702E8802593F9 /* DFUServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C21DB2FE0B25169074239A598F7B5 /* DFUServiceDelegate.swift */; };
+		E2BBE44E74AFD27D280AC9876161E0CC /* ibeacon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2CC7F93BFD0B88524CFEF5769F78ED9 /* ibeacon.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		E54E68FAA304AB6827D80EF0DF49A0D7 /* dfu_operations_details.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4981F13612D356957111ED84DF6F1BA /* dfu_operations_details.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		E571F1933D0E6E24246A085B32B2DE96 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C609CCB8B9B593AF09046B155DF64D /* Errors.swift */; };
+		EAC2E48F71C4C5535C33957C110329B9 /* logging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A454D1A79CA922FB85E9B89901301B7 /* logging.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		EBFBD7B1B7BC6A210690B0A9994E4274 /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48070C0BE9239B10903D8C244F3961AF /* Manifest.swift */; };
+		F0F305141687A0C4DC63F4B8C581A8AA /* MetaWear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439D27F8FCB06FACB5C54E63F299E4E4 /* MetaWear.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		F2ECC5AB589E099B805D48A54688D1CB /* threadpool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6186A0BD15949351453671140CF9B74B /* threadpool.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		F3C0E4CA2273C7704B27F6DCAAA21BDC /* multichanneltemperature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B646993B470AF1DB119E9ADDD58E9 /* multichanneltemperature.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		F460BCF117AB0FDA79515684FA825D9F /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D92975258B2AF6CCC560825E9C4D78 /* Data+Compression.swift */; };
+		F485D4E1A1A433219760129EF19F3ABF /* LoggerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D55BAAA33ADB6670957C928DA0C872D /* LoggerDelegate.swift */; };
+		F7178DB0896B04E33D849A488B2558F4 /* MetaWearScanner+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4ACA7BE6B527287F2CDA5B59946087 /* MetaWearScanner+Mock.swift */; };
+		F7AFAD93127546317263366CD9C141D0 /* Archive+Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4FBF8C16363F5B29000CFA7A194B51 /* Archive+Reading.swift */; };
+		F7C8E677170643E19AEF2EDB99D28C4E /* ZIPFoundation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B995C36D5238753CC3EBADCB68FF18 /* ZIPFoundation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC612F14FDE3F843F4F3344799469ED6 /* datainterpreter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEEBF44F9A508CB1D074691EB7AC3CFA /* datainterpreter.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		FC9C0AAFE065C05A687473FB5B00FBD9 /* anonymous_datasignal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CAF80981982D98FBC95A35743A475 /* anonymous_datasignal.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		FCEB50B5F5061F4679CA5BB2567D11D7 /* Bridging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE556D49004A1DD7A9558AB396BD4B /* Bridging.swift */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		FD61E5A6E9CB4AE70886017ADFFAC3AF /* async_creator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 037BA8D41AB658DFAAEF318A8B31E51B /* async_creator.cpp */; settings = {COMPILER_FLAGS = "-Wno-documentation -Wno-comma"; }; };
+		FFEF840F03F964B5446049C02CF7AA0C /* DFUServiceSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7612091CCB67254A72025235F7CAC /* DFUServiceSelector.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C3C0A86EFB2DF3015DEF3DC157001C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9506C7FCDAE6E6967A99655F452EEE93;
+			remoteInfo = iOSDFULibrary;
+		};
+		2FDE75C7E65822C8F4AF2ECF95E14ADF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E8BB3BAFA6478784A9A7DD76C8A1F3C;
+			remoteInfo = MetaWear;
+		};
+		4798A1881061F874A7FD30901D0B6DBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C2EFFC4F01BBC6F90C1D75192762811;
+			remoteInfo = "Pods-MMR-Swift-Tutorial";
+		};
+		4FA806B93F84D1CD8DCE66E240C76680 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA15C8469D67684160CC2A7098EB841C;
+			remoteInfo = ZIPFoundation;
+		};
+		55049A82370825574EFC9A25B62F797D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9506C7FCDAE6E6967A99655F452EEE93;
+			remoteInfo = iOSDFULibrary;
+		};
+		ACFD64D8085DD1B03D1D845B34228815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA15C8469D67684160CC2A7098EB841C;
+			remoteInfo = ZIPFoundation;
+		};
+		AD2B2737C53C4375EB3B07311EC29342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA1CEDB360B77644C934EAD86B37FCB5;
+			remoteInfo = "Bolts-Swift";
+		};
+		B358FBD8DDA6CF81B5DAD010F199BCEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA1CEDB360B77644C934EAD86B37FCB5;
+			remoteInfo = "Bolts-Swift";
+		};
+		B8AE9F4EBD295321EFE3A196ADAE7A06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA1CEDB360B77644C934EAD86B37FCB5;
+			remoteInfo = "Bolts-Swift";
+		};
+		C998C43E98F77D413AD3D3C42CD8E808 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9506C7FCDAE6E6967A99655F452EEE93;
+			remoteInfo = iOSDFULibrary;
+		};
+		F18FB07515F188C3871954E481BEFFA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA15C8469D67684160CC2A7098EB841C;
+			remoteInfo = ZIPFoundation;
+		};
+		F57F3367D5A4A60FC11048E1FACF82A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E8BB3BAFA6478784A9A7DD76C8A1F3C;
+			remoteInfo = MetaWear;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0036B212F436E8EFDF6D4A577CFFAA8E /* MetaWear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MetaWear.debug.xcconfig; sourceTree = "<group>"; };
+		037AC051FD3CCA959F9FAEBD131FDDDA /* utils.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = utils.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/utils.cpp"; sourceTree = "<group>"; };
+		037BA8D41AB658DFAAEF318A8B31E51B /* async_creator.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = async_creator.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/platform/cpp/async_creator.cpp"; sourceTree = "<group>"; };
+		05F51D645900589A2FDD72842BDBA6F7 /* Pods-MMR-Swift-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMR-Swift-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
+		096C0A6A4973F632767FAE2AB27D87E0 /* accelerometer_mma8452q.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = accelerometer_mma8452q.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/accelerometer_mma8452q.cpp"; sourceTree = "<group>"; };
+		0B483F8899AFCF777F7B2F66E1C9A8AC /* IntelHex2BinConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntelHex2BinConverter.swift; path = iOSDFULibrary/Classes/Utilities/HexToBinConverter/IntelHex2BinConverter.swift; sourceTree = "<group>"; };
+		0C9CAF80981982D98FBC95A35743A475 /* anonymous_datasignal.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = anonymous_datasignal.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/anonymous_datasignal.cpp"; sourceTree = "<group>"; };
+		0CFEB735721786E1D7DD407E1B5D0912 /* FileManager+ZIP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FileManager+ZIP.swift"; path = "Sources/ZIPFoundation/FileManager+ZIP.swift"; sourceTree = "<group>"; };
+		0EBBDD4025F81F1AE16492E22F87799B /* BoltsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoltsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F9A6FAC8F6934DD28171510B30F418D /* moduleinfo.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = moduleinfo.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/moduleinfo.cpp"; sourceTree = "<group>"; };
+		0FB462C1C58E44CE9D72AB8F2A683EB9 /* barometer_bosch.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = barometer_bosch.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/barometer_bosch.cpp"; sourceTree = "<group>"; };
+		0FED06DA391311281CF4615E1C67C0FC /* DFUServiceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUServiceController.swift; path = iOSDFULibrary/Classes/Implementation/DFUServiceController.swift; sourceTree = "<group>"; };
+		13F0B0A4825DA0D9045635619C0D1E5A /* ZipArchive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZipArchive.swift; path = iOSDFULibrary/Classes/Utilities/ZipArchive.swift; sourceTree = "<group>"; };
+		14EE6CC9C5974E4BF0BC08F74157BDFF /* FirmwareServer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FirmwareServer.swift; path = MetaWear/DFU/FirmwareServer.swift; sourceTree = "<group>"; };
+		150A95C94E5F9DF882DEBAAD46E042F9 /* Pods-MMR-Swift-Tutorial-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MMR-Swift-Tutorial-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1579A0986D70C32D7BED1A855C31EF4B /* BoltsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BoltsSwift.framework; path = "Bolts-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16DE135C9B92BFEA56910D09E83D2C2D /* conductance.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = conductance.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/conductance.cpp"; sourceTree = "<group>"; };
+		171E4467570B5825072A5307E223D6F4 /* DFUStarterPeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStarterPeripheral.swift; path = iOSDFULibrary/Classes/Implementation/DFUSelector/DFUStarterPeripheral.swift; sourceTree = "<group>"; };
+		1966C24E1D4A8A2110D4F1F0289B55B1 /* Pods_MMR_Swift_TutorialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MMR_Swift_TutorialTests.framework; path = "Pods-MMR-Swift-TutorialTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4D148CA9AAF154EDD960651E24E8D0 /* CBUUID.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBUUID.swift; path = MetaWear/Core/CBUUID.swift; sourceTree = "<group>"; };
+		1CFC32BA6BE9429C6B62A7C569074FDF /* Archive+Writing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+Writing.swift"; path = "Sources/ZIPFoundation/Archive+Writing.swift"; sourceTree = "<group>"; };
+		1D4336A817711CDD066FB9125F6FF87D /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.modulemap"; sourceTree = "<group>"; };
+		2189B082629B5B0185D3389FF1A66A23 /* LoggerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoggerHelper.swift; path = iOSDFULibrary/Classes/Utilities/Logging/LoggerHelper.swift; sourceTree = "<group>"; };
+		21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSDFULibrary.framework; path = iOSDFULibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21E440D4A3F82C04C0410DEEC5A6DE24 /* Bolts-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Bolts-Swift-Info.plist"; sourceTree = "<group>"; };
+		22DB864EA109E596A43DF76152DCF87F /* DFUStream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStream.swift; path = iOSDFULibrary/Classes/Utilities/Streams/DFUStream.swift; sourceTree = "<group>"; };
+		23D92975258B2AF6CCC560825E9C4D78 /* Data+Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Compression.swift"; path = "Sources/ZIPFoundation/Data+Compression.swift"; sourceTree = "<group>"; };
+		2414E78B0FD59F3870D2C0BD0CB73029 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		254C889B7358A85A865E1B83D10707A1 /* MetaWear+LED.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MetaWear+LED.swift"; path = "MetaWear/AsyncUtils/MetaWear+LED.swift"; sourceTree = "<group>"; };
+		2608CDBE743C13679A29584093A4A2D0 /* TaskCompletionSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskCompletionSource.swift; path = Sources/BoltsSwift/TaskCompletionSource.swift; sourceTree = "<group>"; };
+		26E2C618EB7EEB99289F5686B2F41E12 /* Bolts-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bolts-Swift-dummy.m"; sourceTree = "<group>"; };
+		27ABE117E6191E2456A00F5760993C5D /* iOSDFULibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSDFULibrary.debug.xcconfig; sourceTree = "<group>"; };
+		288D3135F9CA4F99DC2733774C199BE6 /* ScannerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScannerModel.swift; path = MetaWear/UI/ScannerModel.swift; sourceTree = "<group>"; };
+		2A0C243A88FA8D3BD9A2A748D950765C /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-umbrella.h"; sourceTree = "<group>"; };
+		2AF0E7488723C95E89C14025E89EF322 /* MockModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockModule.swift; path = MetaWear/Mocks/MockModule.swift; sourceTree = "<group>"; };
+		2D55BAAA33ADB6670957C928DA0C872D /* LoggerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoggerDelegate.swift; path = iOSDFULibrary/Classes/Utilities/Logging/LoggerDelegate.swift; sourceTree = "<group>"; };
+		2DE12D6F2CE94502B821E58FD2664A94 /* gpio.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = gpio.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/gpio.cpp"; sourceTree = "<group>"; };
+		2E6C5053CDD937B369D33C2B9F8A2C99 /* LegacyDFUPeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUPeripheral.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Peripherals/LegacyDFUPeripheral.swift; sourceTree = "<group>"; };
+		2ECDB2372DD2A3E023AE7A284F5CEFF7 /* DFUStreamHex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStreamHex.swift; path = iOSDFULibrary/Classes/Utilities/Streams/DFUStreamHex.swift; sourceTree = "<group>"; };
+		327EB680B02B178FDC4256F2F3006879 /* SecureDFUPeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureDFUPeripheral.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/Peripheral/SecureDFUPeripheral.swift; sourceTree = "<group>"; };
+		32AAA3E3639AF2871458B0F887196001 /* Task+WhenAny.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Task+WhenAny.swift"; path = "Sources/BoltsSwift/Task+WhenAny.swift"; sourceTree = "<group>"; };
+		3434308D925B199AC81C0F1BCDF7C177 /* Pods-MMR-Swift-TutorialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMR-Swift-TutorialTests.debug.xcconfig"; sourceTree = "<group>"; };
+		35E7612091CCB67254A72025235F7CAC /* DFUServiceSelector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUServiceSelector.swift; path = iOSDFULibrary/Classes/Implementation/DFUSelector/DFUServiceSelector.swift; sourceTree = "<group>"; };
+		3A86F543792981A874131E8759334EC0 /* switch.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = switch.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/switch.cpp"; sourceTree = "<group>"; };
+		3B2E256DE234CB05D93EE4FA73CBB548 /* MblMwEvent+Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MblMwEvent+Async.swift"; path = "MetaWear/AsyncUtils/MblMwEvent+Async.swift"; sourceTree = "<group>"; };
+		3CECC23796363D29E29AE5D349303967 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-Info.plist"; sourceTree = "<group>"; };
+		3D1E02063DCD3B5A02DCB94F0D307427 /* DFUCharacteristic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUCharacteristic.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUCharacteristic.swift; sourceTree = "<group>"; };
+		3DA16FCA7EF5E50DEEF1F0EED66159F4 /* Pods-MMR-Swift-Tutorial-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MMR-Swift-Tutorial-umbrella.h"; sourceTree = "<group>"; };
+		3E6B646993B470AF1DB119E9ADDD58E9 /* multichanneltemperature.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = multichanneltemperature.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/multichanneltemperature.cpp"; sourceTree = "<group>"; };
+		3EC4D225FAC6BC19DC19029A11279CDB /* Pods-MMR-Swift-Tutorial.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MMR-Swift-Tutorial.modulemap"; sourceTree = "<group>"; };
+		3F1A480518610C402225F9CE0CAE7C07 /* Bolts-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Bolts-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		3FF68213E582760C9398B1145CD3EC70 /* Pods-MMR-Swift-TutorialTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MMR-Swift-TutorialTests.modulemap"; sourceTree = "<group>"; };
+		416C6D93294185FD8FF9C31AD94078C4 /* DFUPeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUPeripheral.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUPeripheral.swift; sourceTree = "<group>"; };
+		439D27F8FCB06FACB5C54E63F299E4E4 /* MetaWear.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetaWear.swift; path = MetaWear/Core/MetaWear.swift; sourceTree = "<group>"; };
+		43A8656B70993191445A2FF63A414A42 /* responseheader.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = responseheader.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/responseheader.cpp"; sourceTree = "<group>"; };
+		43C23B49B0188A3EEA2E7965DD5FB720 /* DFUController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUController.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUController.swift; sourceTree = "<group>"; };
+		48070C0BE9239B10903D8C244F3961AF /* Manifest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manifest.swift; path = iOSDFULibrary/Classes/Utilities/DFUPackage/Manifest/Manifest.swift; sourceTree = "<group>"; };
+		48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZIPFoundation.framework; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48B23EADFEAF607F5C6E639378AC8E46 /* Task+ContinueWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Task+ContinueWith.swift"; path = "Sources/BoltsSwift/Task+ContinueWith.swift"; sourceTree = "<group>"; };
+		4A454D1A79CA922FB85E9B89901301B7 /* logging.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = logging.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/logging.cpp"; sourceTree = "<group>"; };
+		4B07F09269621C499CD5A8886CEECB8C /* ZIPFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZIPFoundation.debug.xcconfig; sourceTree = "<group>"; };
+		4B8515F12E6B3A07E573017DE224CC26 /* Pods-MMR-Swift-TutorialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMR-Swift-TutorialTests.release.xcconfig"; sourceTree = "<group>"; };
+		4C8722755D4C095EE0EB6EF8DBDCD54A /* Pods-MMR-Swift-Tutorial-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MMR-Swift-Tutorial-dummy.m"; sourceTree = "<group>"; };
+		4F275E38E38FD638FE271B0D5ACA5C7B /* DFUPeripheralDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUPeripheralDelegate.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUPeripheralDelegate.swift; sourceTree = "<group>"; };
+		5103A37B46C39AE57652C6591269C46F /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-frameworks.sh"; sourceTree = "<group>"; };
+		54AE6A8E27FA47D09B614BD9D8E0E50E /* SecureDFUControlPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureDFUControlPoint.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/Characteristics/SecureDFUControlPoint.swift; sourceTree = "<group>"; };
+		55C0D33C482D43F8A2CB5EA375A91D5A /* Pods-MMR-Swift-Tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMR-Swift-Tutorial.debug.xcconfig"; sourceTree = "<group>"; };
+		55EBE6F9C983B5B0A097A4593C0E0629 /* SecureDFUService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureDFUService.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/Services/SecureDFUService.swift; sourceTree = "<group>"; };
+		576CBF49D55E67945F4F7A998C76190F /* cbindings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = cbindings.swift; path = "MetaWear/MetaWear-SDK-Cpp/bindings/swift/cbindings.swift"; sourceTree = "<group>"; };
+		5A694B441A1076906AAF80F0A0D0D0BC /* Pods-MMR-Swift-Tutorial-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MMR-Swift-Tutorial-frameworks.sh"; sourceTree = "<group>"; };
+		5B15DEE4DAB89D80BD369E5E9B4E8B0F /* ZIPFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZIPFoundation-dummy.m"; sourceTree = "<group>"; };
+		5BF88D62CE5C8495AE591826DF032414 /* LegacyDFUService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUService.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Services/LegacyDFUService.swift; sourceTree = "<group>"; };
+		5C2CB51344171C6E11816C82F871EE8D /* miniz.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = miniz.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/dfu/cpp/miniz.cpp"; sourceTree = "<group>"; };
+		5D1446F44905D5FB1B6FF4641405FC8C /* proximity_tsl2671.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = proximity_tsl2671.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/proximity_tsl2671.cpp"; sourceTree = "<group>"; };
+		5E65D07EE311992A4817BA880E4098E3 /* LegacyDFUExecutor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUExecutor.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/DFU/LegacyDFUExecutor.swift; sourceTree = "<group>"; };
+		602DD4D0218D70B93EE6C158816F9677 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-dummy.m"; sourceTree = "<group>"; };
+		6068D17E1D9D9146923EE6285413C8BE /* version.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = version.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/version.cpp"; sourceTree = "<group>"; };
+		6186A0BD15949351453671140CF9B74B /* threadpool.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = threadpool.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/platform/cpp/threadpool.cpp"; sourceTree = "<group>"; };
+		62FE85550C1C0CBA624D9F9F07461FE3 /* colordetector_tcs34725.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = colordetector_tcs34725.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/colordetector_tcs34725.cpp"; sourceTree = "<group>"; };
+		64480A9B4CDA6AD88472B28D8BB36EE9 /* ZIPFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZIPFoundation.modulemap; sourceTree = "<group>"; };
+		64B3CD649E65E045E3AB558B3A51F6E9 /* Pods-MMR-Swift-TutorialTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MMR-Swift-TutorialTests-Info.plist"; sourceTree = "<group>"; };
+		67405365AE670460C15BF73EF114E243 /* iOSDFULibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSDFULibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69653A4459DD2877ABB338E5937A90CE /* neopixel.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = neopixel.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/peripheral/cpp/neopixel.cpp"; sourceTree = "<group>"; };
+		69876F026266ED979F1B48EFE0387DF0 /* Executor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Executor.swift; path = Sources/BoltsSwift/Executor.swift; sourceTree = "<group>"; };
+		6A4ACA7BE6B527287F2CDA5B59946087 /* MetaWearScanner+Mock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MetaWearScanner+Mock.swift"; path = "MetaWear/Mocks/MetaWearScanner+Mock.swift"; sourceTree = "<group>"; };
+		6B7FEFDAFA55585B1AFC420EF1123B1C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
+		6B99B62F42E1FA44931F8DCA5C60664F /* MetaWear+Mock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MetaWear+Mock.swift"; path = "MetaWear/Mocks/MetaWear+Mock.swift"; sourceTree = "<group>"; };
+		6C9258F7CFA9AEB04F9435D509FA86F4 /* dfu_utility.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = dfu_utility.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/dfu/cpp/dfu_utility.cpp"; sourceTree = "<group>"; };
+		6D86E63758C00D55889FD6114058A57D /* Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Data.swift; path = iOSDFULibrary/Classes/Utilities/Data.swift; sourceTree = "<group>"; };
+		6DC6E9CAA8A630BC19B2C8AB99D13E60 /* DFUControlPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUControlPoint.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Characteristics/DFUControlPoint.swift; sourceTree = "<group>"; };
+		6DEA71A5658DB6BB0E21CC59AEBF81C8 /* Double.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Double.swift; path = iOSDFULibrary/Classes/Utilities/Double.swift; sourceTree = "<group>"; };
+		6E7E10E1854BE9E662DA9275DCEA0F6C /* led.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = led.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/peripheral/cpp/led.cpp"; sourceTree = "<group>"; };
+		6F5D080EFAF104D9EEB2CBB187324AB0 /* iOSDFULibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iOSDFULibrary.modulemap; sourceTree = "<group>"; };
+		71CB62C784231EBB0608C979EF2424D6 /* gyro_bmi160.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = gyro_bmi160.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/gyro_bmi160.cpp"; sourceTree = "<group>"; };
+		73F3064E34D3E822D1A13FF98A7AD320 /* MblMwDataSignal+Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MblMwDataSignal+Async.swift"; path = "MetaWear/AsyncUtils/MblMwDataSignal+Async.swift"; sourceTree = "<group>"; };
+		7513CE734BFA8D4D9A8598BB8C003968 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7857F1FB26DE687B6232BA3BD024E554 /* crc32.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = crc32.swift; path = iOSDFULibrary/Classes/Utilities/crc32.swift; sourceTree = "<group>"; };
+		78EE556D49004A1DD7A9558AB396BD4B /* Bridging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bridging.swift; path = MetaWear/Core/Bridging.swift; sourceTree = "<group>"; };
+		7A36D7A5CF038055C3909206DF7CA79D /* iOSDFULibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSDFULibrary.release.xcconfig; sourceTree = "<group>"; };
+		7B4BFA457A1F01028FAB04E6992C5021 /* MblMwGattChar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MblMwGattChar.swift; path = MetaWear/Core/MblMwGattChar.swift; sourceTree = "<group>"; };
+		7B5FF7F9EA9602E6BCF151B1C7D36CAA /* Archive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Archive.swift; path = Sources/ZIPFoundation/Archive.swift; sourceTree = "<group>"; };
+		7B8A7526742F059C401503EE3B63458D /* Pods-MMR-Swift-Tutorial-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MMR-Swift-Tutorial-Info.plist"; sourceTree = "<group>"; };
+		7C8A3FA9965A9BB6296DA0C67AB280A7 /* DFUExecutor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUExecutor.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUExecutor.swift; sourceTree = "<group>"; };
+		7D5DC2E74785E2928290ED52FF03BB34 /* SoftdeviceBootloaderInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoftdeviceBootloaderInfo.swift; path = iOSDFULibrary/Classes/Utilities/DFUPackage/Manifest/SoftdeviceBootloaderInfo.swift; sourceTree = "<group>"; };
+		7DF415FCE4EC0E6B83191E69BD55A61F /* MetaWear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MetaWear.framework; path = MetaWear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		802828F7B11944666401C02F8DAACA58 /* DFUServiceInitiator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUServiceInitiator.swift; path = iOSDFULibrary/Classes/Implementation/DFUServiceInitiator.swift; sourceTree = "<group>"; };
+		81541EFD1850F4DEF4085A6FC8CE065E /* Task+Delay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Task+Delay.swift"; path = "Sources/BoltsSwift/Task+Delay.swift"; sourceTree = "<group>"; };
+		81EA18550FCA305D2BFCD2BB109A2F82 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8220AA8E0CADD8F9289630C7830E3287 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		83C9E72E15D84717B4881FDEBC57AA9F /* accelerometer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = accelerometer.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/accelerometer.cpp"; sourceTree = "<group>"; };
+		83F043A9D35B6A8872F99249B54F54CE /* task.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = task.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/platform/cpp/task.cpp"; sourceTree = "<group>"; };
+		85AD2F4F2D5A334BE284CA0229249659 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		88FEA7BCF7BA8A8BB3D8A2A792235E5A /* SecureDFUServiceInitiator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureDFUServiceInitiator.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/DFU/SecureDFUServiceInitiator.swift; sourceTree = "<group>"; };
+		8C9F63211E6E79EF75E5FF4356A199BF /* MetaWear-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MetaWear-Info.plist"; sourceTree = "<group>"; };
+		8F09421C8399D8D19DFAF4A8A22CD51F /* sensor_fusion.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sensor_fusion.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/sensor_fusion.cpp"; sourceTree = "<group>"; };
+		8F6AF808D5948BFD1F4EACFFB0683C57 /* Pods-MMR-Swift-TutorialTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MMR-Swift-TutorialTests-umbrella.h"; sourceTree = "<group>"; };
+		8F8C21DB2FE0B25169074239A598F7B5 /* DFUServiceDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUServiceDelegate.swift; path = iOSDFULibrary/Classes/Implementation/DFUServiceDelegate.swift; sourceTree = "<group>"; };
+		920F6AB17B5DA9951014FCB62B4C9AF8 /* Pods-MMR-Swift-Tutorial-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MMR-Swift-Tutorial-acknowledgements.plist"; sourceTree = "<group>"; };
+		924D00F98D9A3A9E34A6DD44F913CE36 /* Pods-MMR-Swift-TutorialTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MMR-Swift-TutorialTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		92BBE54541127786228F77D111E9A826 /* MetaWear.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MetaWear.modulemap; sourceTree = "<group>"; };
+		95F8A511677B1814C3722242524ACB51 /* Entry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Sources/ZIPFoundation/Entry.swift; sourceTree = "<group>"; };
+		96ED0F0D053B4BB815D579C7F6D02E1B /* MetaWear+Firmware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MetaWear+Firmware.swift"; path = "MetaWear/DFU/MetaWear+Firmware.swift"; sourceTree = "<group>"; };
+		980DCD857F54DE51D1CC25BD3DFE111F /* Task+WhenAll.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Task+WhenAll.swift"; path = "Sources/BoltsSwift/Task+WhenAll.swift"; sourceTree = "<group>"; };
+		9A8ED6B569C42E5B8A04EF52DADBFE70 /* MetaWear-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MetaWear-umbrella.h"; sourceTree = "<group>"; };
+		9ABA7140EF363EE9D269808B020BB1FA /* datasignal.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = datasignal.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/datasignal.cpp"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5632E3D0D9249083BAA2BC37854316F /* Bolts-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Bolts-Swift.modulemap"; sourceTree = "<group>"; };
+		A6F358198646AD279A7BF7A01815D8AD /* dfu_operations.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = dfu_operations.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/dfu/cpp/dfu_operations.cpp"; sourceTree = "<group>"; };
+		A799AD63733873924B8E382DEA02C262 /* magnetometer_bmm150.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = magnetometer_bmm150.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/magnetometer_bmm150.cpp"; sourceTree = "<group>"; };
+		A95A2F6A1011AC764471FAFC5F47BBFD /* DFUPeripheralSelectorDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUPeripheralSelectorDelegate.swift; path = iOSDFULibrary/Classes/Implementation/DFUPeripheralSelectorDelegate.swift; sourceTree = "<group>"; };
+		AB78C1A5915D701157866E2E498E1DCA /* Pods_MMR_Swift_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MMR_Swift_Tutorial.framework; path = "Pods-MMR-Swift-Tutorial.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC434B81C246E44EA6750F1654E75ED /* DFUService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUService.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUService.swift; sourceTree = "<group>"; };
+		ACB606C56576590EE2DB4F43DBCA03ED /* humidity_bme280.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = humidity_bme280.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/humidity_bme280.cpp"; sourceTree = "<group>"; };
+		B1E0B8189115B01003B544D2FE2A8003 /* Data+Serialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Serialization.swift"; path = "Sources/ZIPFoundation/Data+Serialization.swift"; sourceTree = "<group>"; };
+		B3B995C36D5238753CC3EBADCB68FF18 /* ZIPFoundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZIPFoundation-umbrella.h"; sourceTree = "<group>"; };
+		B420258AEEA66A4004F3C879700D70AE /* debug.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = debug.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/debug.cpp"; sourceTree = "<group>"; };
+		B63D8CBD70D725BC88381D6A3E647274 /* dataprocessor_config.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = dataprocessor_config.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/processor/cpp/dataprocessor_config.cpp"; sourceTree = "<group>"; };
+		B79B617C6FDB7FF09C11DDBCA6EC3DF3 /* ButtonlessDFU.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonlessDFU.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/Characteristics/ButtonlessDFU.swift; sourceTree = "<group>"; };
+		B8D20035A8E3B68E5F50BD4ED41C1A50 /* MetaWearScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetaWearScanner.swift; path = MetaWear/Core/MetaWearScanner.swift; sourceTree = "<group>"; };
+		BAB60A100C876217B0592AD016A6DEC7 /* Bolts-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-Swift-umbrella.h"; sourceTree = "<group>"; };
+		BBB0BF7BB4B90849DA1DA4A7C170D9F3 /* macro.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = macro.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/macro.cpp"; sourceTree = "<group>"; };
+		BBDE9AB645A147EDD7D5973388408A84 /* ZIPFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZIPFoundation.release.xcconfig; sourceTree = "<group>"; };
+		BBF219A107C3A18F80030D0C67A6BFA6 /* Bolts-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Bolts-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		BD047E9B04A35485D4F94592CDCDC700 /* FirmwareBuild.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FirmwareBuild.swift; path = MetaWear/DFU/FirmwareBuild.swift; sourceTree = "<group>"; };
+		BD4F603B82C0E5852C90F4C91D5EF405 /* DFUVersion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUVersion.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Characteristics/DFUVersion.swift; sourceTree = "<group>"; };
+		BDD8BCFF67D29ED6D76E535D6257E090 /* SecureDFUExecutor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureDFUExecutor.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/DFU/SecureDFUExecutor.swift; sourceTree = "<group>"; };
+		C3CD22A795FEC9C8E96CBE44907062C5 /* accelerometer_bosch.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = accelerometer_bosch.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/accelerometer_bosch.cpp"; sourceTree = "<group>"; };
+		C3F116FC33607399B874C7E6ECD5369D /* ManifestFirmwareInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ManifestFirmwareInfo.swift; path = iOSDFULibrary/Classes/Utilities/DFUPackage/Manifest/ManifestFirmwareInfo.swift; sourceTree = "<group>"; };
+		C4981F13612D356957111ED84DF6F1BA /* dfu_operations_details.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = dfu_operations_details.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/dfu/cpp/dfu_operations_details.cpp"; sourceTree = "<group>"; };
+		C4B48B6FDA17CEA21B39624F6A4B14BA /* MetaWear-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MetaWear-prefix.pch"; sourceTree = "<group>"; };
+		C63D2F1E7BB626BBA506E4F772EDA73A /* DFUUuidHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUUuidHelper.swift; path = iOSDFULibrary/Classes/Implementation/DFUUuidHelper.swift; sourceTree = "<group>"; };
+		C6F2600AC95850D2B3A98C7603D2D0EE /* DFUFirmware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUFirmware.swift; path = iOSDFULibrary/Classes/Implementation/Firmware/DFUFirmware.swift; sourceTree = "<group>"; };
+		C726E6BF1DA3FCE0502D528FB02EC246 /* String+VersionCompare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+VersionCompare.swift"; path = "MetaWear/Core/String+VersionCompare.swift"; sourceTree = "<group>"; };
+		C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		C83A99633AF0B3899BC7C372F3D988B4 /* Bolts-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-Swift-prefix.pch"; sourceTree = "<group>"; };
+		CAD85021AD087BB26F1BB965581F0DA8 /* DFUStreamZip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStreamZip.swift; path = iOSDFULibrary/Classes/Utilities/Streams/DFUStreamZip.swift; sourceTree = "<group>"; };
+		CCA4701BAAB06C24139B9C2B8BE5AC64 /* Task.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Sources/BoltsSwift/Task.swift; sourceTree = "<group>"; };
+		CD28328A5324440BABA0904B7F3C1D57 /* iOSDFULibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iOSDFULibrary-Info.plist"; sourceTree = "<group>"; };
+		D2CC7F93BFD0B88524CFEF5769F78ED9 /* ibeacon.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ibeacon.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/peripheral/cpp/ibeacon.cpp"; sourceTree = "<group>"; };
+		DA001B0E2B5E8D9F4132DC2593CCC8B0 /* iOSDFULibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSDFULibrary-umbrella.h"; sourceTree = "<group>"; };
+		DDEEF008691ADF227282885838D6A9D3 /* Pods-MMR-Swift-TutorialTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MMR-Swift-TutorialTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E263B8416FF16D87FDB46B7158244573 /* serialpassthrough.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = serialpassthrough.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/serialpassthrough.cpp"; sourceTree = "<group>"; };
+		E2A3872080F6301249AC6F030125B0E6 /* memory.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = memory.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/platform/cpp/memory.cpp"; sourceTree = "<group>"; };
+		E4006A04FA02580744D023A41999AD53 /* LogDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogDelegate.swift; path = MetaWear/Core/LogDelegate.swift; sourceTree = "<group>"; };
+		E44F019AEC522FF742472430074D4C86 /* Pods_MMR_Swift_Tutorial_MMR_Swift_TutorialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MMR_Swift_Tutorial_MMR_Swift_TutorialUITests.framework; path = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E646A383570D094757FC022D5A76A6AD /* settings.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = settings.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/settings.cpp"; sourceTree = "<group>"; };
+		E69282D03CA22274B470BF390FF278C0 /* DFUStreamBin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStreamBin.swift; path = iOSDFULibrary/Classes/Utilities/Streams/DFUStreamBin.swift; sourceTree = "<group>"; };
+		E79A8DAD2CFB6932DE688C651FCD008D /* timer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = timer.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/timer.cpp"; sourceTree = "<group>"; };
+		EDF3BDD4FF48266036CD960F145D7843 /* metawearboard.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = metawearboard.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/impl/cpp/metawearboard.cpp"; sourceTree = "<group>"; };
+		EE3F24E3B67E7A079D92B8610236B607 /* DFUPeripheralSelector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUPeripheralSelector.swift; path = iOSDFULibrary/Classes/Implementation/DFUPeripheralSelector.swift; sourceTree = "<group>"; };
+		EF27533D927258D021D0901B501D57D0 /* ambientlight_ltr329.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ambientlight_ltr329.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/sensor/cpp/ambientlight_ltr329.cpp"; sourceTree = "<group>"; };
+		EF76121B54DFC2901E1DEA2BE018F13A /* DFUPacket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUPacket.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Characteristics/DFUPacket.swift; sourceTree = "<group>"; };
+		F1D5DBE5E57C8C1A753F5C841B8A7392 /* file_operations.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = file_operations.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/dfu/cpp/file_operations.cpp"; sourceTree = "<group>"; };
+		F2082153E651B9C89E45D1DC01A81979 /* LegacyDFUServiceInitiator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUServiceInitiator.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/DFU/LegacyDFUServiceInitiator.swift; sourceTree = "<group>"; };
+		F28D34CAA7E0CA929C2BF34FAAE4B404 /* ZIPFoundation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZIPFoundation-Info.plist"; sourceTree = "<group>"; };
+		F3456A3583E5D79787160AF47AD61288 /* LegacyDFUPeripheralDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUPeripheralDelegate.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Peripherals/LegacyDFUPeripheralDelegate.swift; sourceTree = "<group>"; };
+		F46DF8F501AF521AB21685F7B67EDC43 /* MetaWear+Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MetaWear+Async.swift"; path = "MetaWear/AsyncUtils/MetaWear+Async.swift"; sourceTree = "<group>"; };
+		F4C609CCB8B9B593AF09046B155DF64D /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/BoltsSwift/Errors.swift; sourceTree = "<group>"; };
+		F4CBEEE834ABBB448134740C6F322C39 /* event.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = event.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/core/cpp/event.cpp"; sourceTree = "<group>"; };
+		F5DF7AE281C5CDDCCDF82B3EF5E19034 /* ZIPFoundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZIPFoundation-prefix.pch"; sourceTree = "<group>"; };
+		F77331ABE4BE6E6A314EE04A6EFE835D /* SecureDFUPacket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureDFUPacket.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/Characteristics/SecureDFUPacket.swift; sourceTree = "<group>"; };
+		F78AE717D0D39FF354B43E5A21A886A8 /* Pods-MMR-Swift-TutorialTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MMR-Swift-TutorialTests-dummy.m"; sourceTree = "<group>"; };
+		F885A63F03114D1B9DC0F3CFBB99BE4F /* MetaWear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MetaWear.release.xcconfig; sourceTree = "<group>"; };
+		F95E5D879B4B1AE246D8BE2248D60C5A /* DeviceInformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceInformation.swift; path = MetaWear/Core/DeviceInformation.swift; sourceTree = "<group>"; };
+		F9CA57091DA70EF494CA9E637787F018 /* haptic.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = haptic.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/peripheral/cpp/haptic.cpp"; sourceTree = "<group>"; };
+		FB4FBF8C16363F5B29000CFA7A194B51 /* Archive+Reading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+Reading.swift"; path = "Sources/ZIPFoundation/Archive+Reading.swift"; sourceTree = "<group>"; };
+		FD2813EC1E76417A681F5E54913943F9 /* MetaWearData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetaWearData.swift; path = MetaWear/Core/MetaWearData.swift; sourceTree = "<group>"; };
+		FD42C30205F8526E80893BDED99EF567 /* SecureDFUPeripheralDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureDFUPeripheralDelegate.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/Peripheral/SecureDFUPeripheralDelegate.swift; sourceTree = "<group>"; };
+		FE38CDA3BB03C60C81E00861AC3F196A /* MetaWear-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MetaWear-dummy.m"; sourceTree = "<group>"; };
+		FE5AC5D106363AE5FEB71D0010B4EF08 /* iOSDFULibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iOSDFULibrary-dummy.m"; sourceTree = "<group>"; };
+		FEEBF44F9A508CB1D074691EB7AC3CFA /* datainterpreter.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = datainterpreter.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/impl/cpp/datainterpreter.cpp"; sourceTree = "<group>"; };
+		FF1F239475F3F2FC92BD52E4A86CA74E /* iOSDFULibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSDFULibrary-prefix.pch"; sourceTree = "<group>"; };
+		FF523F522374FE3DDEA7D2315C371467 /* dataprocessor.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = dataprocessor.cpp; path = "MetaWear/MetaWear-SDK-Cpp/src/metawear/processor/cpp/dataprocessor.cpp"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2453F01646E500CED4D8CCD6E463E2CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6372092B8CB40773F2E1E3E807392698 /* BoltsSwift.framework in Frameworks */,
+				5AB8B258535F29AD11CBA978F0672710 /* Cocoa.framework in Frameworks */,
+				AAA26256C943FC20C722463457D55C02 /* CoreBluetooth.framework in Frameworks */,
+				19926E825C384DA2D7AACDCCDF1D48C7 /* iOSDFULibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E5A9EFAB91578C8A3C46CFBBF0796AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C3D72955203577F24CBE4501D13550 /* Cocoa.framework in Frameworks */,
+				AAB178FA94AF79A5AC2225A80B8115F5 /* ZIPFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB6FD737655D82BCF9961C18F3E59CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5110F313EA5DDA0E8520196757D2C8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74A7B3FEDA7F335425066E1C928ED528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AEE39D238B243B63595F57F41AEA411 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B40A94132AA191957EFA86CCFB2451E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D41876CF485D3A9CC3B7F0CA011411 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1EDFFD4FD6FDB9C9E9F18AEF5879E28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6501D7D5D863EADF96E13F3D62A26DA9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACD69322CFF8127F60C62B184F546EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D23B2F0B071931168B65C8E08A43D96 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08DF44985AB9D3BBFAD13B1DD8FDBC0A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5632E3D0D9249083BAA2BC37854316F /* Bolts-Swift.modulemap */,
+				26E2C618EB7EEB99289F5686B2F41E12 /* Bolts-Swift-dummy.m */,
+				21E440D4A3F82C04C0410DEEC5A6DE24 /* Bolts-Swift-Info.plist */,
+				C83A99633AF0B3899BC7C372F3D988B4 /* Bolts-Swift-prefix.pch */,
+				BAB60A100C876217B0592AD016A6DEC7 /* Bolts-Swift-umbrella.h */,
+				BBF219A107C3A18F80030D0C67A6BFA6 /* Bolts-Swift.debug.xcconfig */,
+				3F1A480518610C402225F9CE0CAE7C07 /* Bolts-Swift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Bolts-Swift";
+			sourceTree = "<group>";
+		};
+		2933F6DDC008152CAF7CD455E45B8C3E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				92BBE54541127786228F77D111E9A826 /* MetaWear.modulemap */,
+				FE38CDA3BB03C60C81E00861AC3F196A /* MetaWear-dummy.m */,
+				8C9F63211E6E79EF75E5FF4356A199BF /* MetaWear-Info.plist */,
+				C4B48B6FDA17CEA21B39624F6A4B14BA /* MetaWear-prefix.pch */,
+				9A8ED6B569C42E5B8A04EF52DADBFE70 /* MetaWear-umbrella.h */,
+				0036B212F436E8EFDF6D4A577CFFAA8E /* MetaWear.debug.xcconfig */,
+				F885A63F03114D1B9DC0F3CFBB99BE4F /* MetaWear.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MetaWear";
+			sourceTree = "<group>";
+		};
+		2EBB7B0B6325565462A1D3FA1AC5FF5C /* ZIPFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				7B5FF7F9EA9602E6BCF151B1C7D36CAA /* Archive.swift */,
+				FB4FBF8C16363F5B29000CFA7A194B51 /* Archive+Reading.swift */,
+				1CFC32BA6BE9429C6B62A7C569074FDF /* Archive+Writing.swift */,
+				23D92975258B2AF6CCC560825E9C4D78 /* Data+Compression.swift */,
+				B1E0B8189115B01003B544D2FE2A8003 /* Data+Serialization.swift */,
+				95F8A511677B1814C3722242524ACB51 /* Entry.swift */,
+				0CFEB735721786E1D7DD407E1B5D0912 /* FileManager+ZIP.swift */,
+				81C8366B2D191857FECE28624ADAF836 /* Support Files */,
+			);
+			name = ZIPFoundation;
+			path = ZIPFoundation;
+			sourceTree = "<group>";
+		};
+		317522D4F07B81AAB606C6BCD410FBE6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2260860977E4AAEC3B3ACC3D9EA30FA /* Pods-MMR-Swift-Tutorial */,
+				3A898238E63609D0BEE4B562AE889208 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests */,
+				ABEA70F68CD4BD2A6FB45DF3317F4BB1 /* Pods-MMR-Swift-TutorialTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3A898238E63609D0BEE4B562AE889208 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1D4336A817711CDD066FB9125F6FF87D /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.modulemap */,
+				8220AA8E0CADD8F9289630C7830E3287 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-acknowledgements.markdown */,
+				7513CE734BFA8D4D9A8598BB8C003968 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-acknowledgements.plist */,
+				602DD4D0218D70B93EE6C158816F9677 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-dummy.m */,
+				5103A37B46C39AE57652C6591269C46F /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-frameworks.sh */,
+				3CECC23796363D29E29AE5D349303967 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-Info.plist */,
+				2A0C243A88FA8D3BD9A2A748D950765C /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-umbrella.h */,
+				85AD2F4F2D5A334BE284CA0229249659 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.debug.xcconfig */,
+				81EA18550FCA305D2BFCD2BB109A2F82 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.release.xcconfig */,
+			);
+			name = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests";
+			path = "Target Support Files/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests";
+			sourceTree = "<group>";
+		};
+		4412E67E2EDC9F6E7302A4C5D5182382 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				288D3135F9CA4F99DC2733774C199BE6 /* ScannerModel.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		554898A6837754620535A0BD99442150 /* DFU */ = {
+			isa = PBXGroup;
+			children = (
+				BD047E9B04A35485D4F94592CDCDC700 /* FirmwareBuild.swift */,
+				14EE6CC9C5974E4BF0BC08F74157BDFF /* FirmwareServer.swift */,
+				96ED0F0D053B4BB815D579C7F6D02E1B /* MetaWear+Firmware.swift */,
+			);
+			name = DFU;
+			sourceTree = "<group>";
+		};
+		5D3DE0EE4D6F4D8C2CAB980788BF351C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1579A0986D70C32D7BED1A855C31EF4B /* BoltsSwift.framework */,
+				21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */,
+				7DF415FCE4EC0E6B83191E69BD55A61F /* MetaWear.framework */,
+				AB78C1A5915D701157866E2E498E1DCA /* Pods_MMR_Swift_Tutorial.framework */,
+				E44F019AEC522FF742472430074D4C86 /* Pods_MMR_Swift_Tutorial_MMR_Swift_TutorialUITests.framework */,
+				1966C24E1D4A8A2110D4F1F0289B55B1 /* Pods_MMR_Swift_TutorialTests.framework */,
+				48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6EFBA6A0509EEA163C37A95CB00FB169 /* iOSDFULibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B79B617C6FDB7FF09C11DDBCA6EC3DF3 /* ButtonlessDFU.swift */,
+				7857F1FB26DE687B6232BA3BD024E554 /* crc32.swift */,
+				6D86E63758C00D55889FD6114058A57D /* Data.swift */,
+				3D1E02063DCD3B5A02DCB94F0D307427 /* DFUCharacteristic.swift */,
+				43C23B49B0188A3EEA2E7965DD5FB720 /* DFUController.swift */,
+				6DC6E9CAA8A630BC19B2C8AB99D13E60 /* DFUControlPoint.swift */,
+				7C8A3FA9965A9BB6296DA0C67AB280A7 /* DFUExecutor.swift */,
+				C6F2600AC95850D2B3A98C7603D2D0EE /* DFUFirmware.swift */,
+				EF76121B54DFC2901E1DEA2BE018F13A /* DFUPacket.swift */,
+				416C6D93294185FD8FF9C31AD94078C4 /* DFUPeripheral.swift */,
+				4F275E38E38FD638FE271B0D5ACA5C7B /* DFUPeripheralDelegate.swift */,
+				EE3F24E3B67E7A079D92B8610236B607 /* DFUPeripheralSelector.swift */,
+				A95A2F6A1011AC764471FAFC5F47BBFD /* DFUPeripheralSelectorDelegate.swift */,
+				ABC434B81C246E44EA6750F1654E75ED /* DFUService.swift */,
+				0FED06DA391311281CF4615E1C67C0FC /* DFUServiceController.swift */,
+				8F8C21DB2FE0B25169074239A598F7B5 /* DFUServiceDelegate.swift */,
+				802828F7B11944666401C02F8DAACA58 /* DFUServiceInitiator.swift */,
+				35E7612091CCB67254A72025235F7CAC /* DFUServiceSelector.swift */,
+				171E4467570B5825072A5307E223D6F4 /* DFUStarterPeripheral.swift */,
+				22DB864EA109E596A43DF76152DCF87F /* DFUStream.swift */,
+				E69282D03CA22274B470BF390FF278C0 /* DFUStreamBin.swift */,
+				2ECDB2372DD2A3E023AE7A284F5CEFF7 /* DFUStreamHex.swift */,
+				CAD85021AD087BB26F1BB965581F0DA8 /* DFUStreamZip.swift */,
+				C63D2F1E7BB626BBA506E4F772EDA73A /* DFUUuidHelper.swift */,
+				BD4F603B82C0E5852C90F4C91D5EF405 /* DFUVersion.swift */,
+				6DEA71A5658DB6BB0E21CC59AEBF81C8 /* Double.swift */,
+				0B483F8899AFCF777F7B2F66E1C9A8AC /* IntelHex2BinConverter.swift */,
+				5E65D07EE311992A4817BA880E4098E3 /* LegacyDFUExecutor.swift */,
+				2E6C5053CDD937B369D33C2B9F8A2C99 /* LegacyDFUPeripheral.swift */,
+				F3456A3583E5D79787160AF47AD61288 /* LegacyDFUPeripheralDelegate.swift */,
+				5BF88D62CE5C8495AE591826DF032414 /* LegacyDFUService.swift */,
+				F2082153E651B9C89E45D1DC01A81979 /* LegacyDFUServiceInitiator.swift */,
+				2D55BAAA33ADB6670957C928DA0C872D /* LoggerDelegate.swift */,
+				2189B082629B5B0185D3389FF1A66A23 /* LoggerHelper.swift */,
+				48070C0BE9239B10903D8C244F3961AF /* Manifest.swift */,
+				C3F116FC33607399B874C7E6ECD5369D /* ManifestFirmwareInfo.swift */,
+				54AE6A8E27FA47D09B614BD9D8E0E50E /* SecureDFUControlPoint.swift */,
+				BDD8BCFF67D29ED6D76E535D6257E090 /* SecureDFUExecutor.swift */,
+				F77331ABE4BE6E6A314EE04A6EFE835D /* SecureDFUPacket.swift */,
+				327EB680B02B178FDC4256F2F3006879 /* SecureDFUPeripheral.swift */,
+				FD42C30205F8526E80893BDED99EF567 /* SecureDFUPeripheralDelegate.swift */,
+				55EBE6F9C983B5B0A097A4593C0E0629 /* SecureDFUService.swift */,
+				88FEA7BCF7BA8A8BB3D8A2A792235E5A /* SecureDFUServiceInitiator.swift */,
+				7D5DC2E74785E2928290ED52FF03BB34 /* SoftdeviceBootloaderInfo.swift */,
+				13F0B0A4825DA0D9045635619C0D1E5A /* ZipArchive.swift */,
+				C8EC310D3E24FA7C836B04DF59C5F7EF /* Support Files */,
+			);
+			name = iOSDFULibrary;
+			path = iOSDFULibrary;
+			sourceTree = "<group>";
+		};
+		738B4A928086831F088A7853C70B24CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EBBDD4025F81F1AE16492E22F87799B /* BoltsSwift.framework */,
+				67405365AE670460C15BF73EF114E243 /* iOSDFULibrary.framework */,
+				2414E78B0FD59F3870D2C0BD0CB73029 /* ZIPFoundation.framework */,
+				AEEE5D61FAA6D3E4F05615E334686CF0 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		800896FBFFA351DBCAEA943CAAD67CA8 /* MetaWear */ = {
+			isa = PBXGroup;
+			children = (
+				D7BCB0B471B6B8ED71824D6BDD6C62F3 /* AsyncUtils */,
+				98C466484478A31721EF1C57F62C1F7A /* Core */,
+				554898A6837754620535A0BD99442150 /* DFU */,
+				D8C33DFD527EAB88A6CD94DB54769729 /* Mocks */,
+				2933F6DDC008152CAF7CD455E45B8C3E /* Support Files */,
+				4412E67E2EDC9F6E7302A4C5D5182382 /* UI */,
+			);
+			name = MetaWear;
+			path = MetaWear;
+			sourceTree = "<group>";
+		};
+		81C8366B2D191857FECE28624ADAF836 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				64480A9B4CDA6AD88472B28D8BB36EE9 /* ZIPFoundation.modulemap */,
+				5B15DEE4DAB89D80BD369E5E9B4E8B0F /* ZIPFoundation-dummy.m */,
+				F28D34CAA7E0CA929C2BF34FAAE4B404 /* ZIPFoundation-Info.plist */,
+				F5DF7AE281C5CDDCCDF82B3EF5E19034 /* ZIPFoundation-prefix.pch */,
+				B3B995C36D5238753CC3EBADCB68FF18 /* ZIPFoundation-umbrella.h */,
+				4B07F09269621C499CD5A8886CEECB8C /* ZIPFoundation.debug.xcconfig */,
+				BBDE9AB645A147EDD7D5973388408A84 /* ZIPFoundation.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ZIPFoundation";
+			sourceTree = "<group>";
+		};
+		98C466484478A31721EF1C57F62C1F7A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				83C9E72E15D84717B4881FDEBC57AA9F /* accelerometer.cpp */,
+				C3CD22A795FEC9C8E96CBE44907062C5 /* accelerometer_bosch.cpp */,
+				096C0A6A4973F632767FAE2AB27D87E0 /* accelerometer_mma8452q.cpp */,
+				EF27533D927258D021D0901B501D57D0 /* ambientlight_ltr329.cpp */,
+				0C9CAF80981982D98FBC95A35743A475 /* anonymous_datasignal.cpp */,
+				037BA8D41AB658DFAAEF318A8B31E51B /* async_creator.cpp */,
+				0FB462C1C58E44CE9D72AB8F2A683EB9 /* barometer_bosch.cpp */,
+				78EE556D49004A1DD7A9558AB396BD4B /* Bridging.swift */,
+				576CBF49D55E67945F4F7A998C76190F /* cbindings.swift */,
+				1A4D148CA9AAF154EDD960651E24E8D0 /* CBUUID.swift */,
+				62FE85550C1C0CBA624D9F9F07461FE3 /* colordetector_tcs34725.cpp */,
+				16DE135C9B92BFEA56910D09E83D2C2D /* conductance.cpp */,
+				FEEBF44F9A508CB1D074691EB7AC3CFA /* datainterpreter.cpp */,
+				FF523F522374FE3DDEA7D2315C371467 /* dataprocessor.cpp */,
+				B63D8CBD70D725BC88381D6A3E647274 /* dataprocessor_config.cpp */,
+				9ABA7140EF363EE9D269808B020BB1FA /* datasignal.cpp */,
+				B420258AEEA66A4004F3C879700D70AE /* debug.cpp */,
+				F95E5D879B4B1AE246D8BE2248D60C5A /* DeviceInformation.swift */,
+				A6F358198646AD279A7BF7A01815D8AD /* dfu_operations.cpp */,
+				C4981F13612D356957111ED84DF6F1BA /* dfu_operations_details.cpp */,
+				6C9258F7CFA9AEB04F9435D509FA86F4 /* dfu_utility.cpp */,
+				F4CBEEE834ABBB448134740C6F322C39 /* event.cpp */,
+				F1D5DBE5E57C8C1A753F5C841B8A7392 /* file_operations.cpp */,
+				2DE12D6F2CE94502B821E58FD2664A94 /* gpio.cpp */,
+				71CB62C784231EBB0608C979EF2424D6 /* gyro_bmi160.cpp */,
+				F9CA57091DA70EF494CA9E637787F018 /* haptic.cpp */,
+				ACB606C56576590EE2DB4F43DBCA03ED /* humidity_bme280.cpp */,
+				D2CC7F93BFD0B88524CFEF5769F78ED9 /* ibeacon.cpp */,
+				6E7E10E1854BE9E662DA9275DCEA0F6C /* led.cpp */,
+				E4006A04FA02580744D023A41999AD53 /* LogDelegate.swift */,
+				4A454D1A79CA922FB85E9B89901301B7 /* logging.cpp */,
+				BBB0BF7BB4B90849DA1DA4A7C170D9F3 /* macro.cpp */,
+				A799AD63733873924B8E382DEA02C262 /* magnetometer_bmm150.cpp */,
+				7B4BFA457A1F01028FAB04E6992C5021 /* MblMwGattChar.swift */,
+				E2A3872080F6301249AC6F030125B0E6 /* memory.cpp */,
+				439D27F8FCB06FACB5C54E63F299E4E4 /* MetaWear.swift */,
+				EDF3BDD4FF48266036CD960F145D7843 /* metawearboard.cpp */,
+				FD2813EC1E76417A681F5E54913943F9 /* MetaWearData.swift */,
+				B8D20035A8E3B68E5F50BD4ED41C1A50 /* MetaWearScanner.swift */,
+				5C2CB51344171C6E11816C82F871EE8D /* miniz.cpp */,
+				0F9A6FAC8F6934DD28171510B30F418D /* moduleinfo.cpp */,
+				3E6B646993B470AF1DB119E9ADDD58E9 /* multichanneltemperature.cpp */,
+				69653A4459DD2877ABB338E5937A90CE /* neopixel.cpp */,
+				5D1446F44905D5FB1B6FF4641405FC8C /* proximity_tsl2671.cpp */,
+				43A8656B70993191445A2FF63A414A42 /* responseheader.cpp */,
+				8F09421C8399D8D19DFAF4A8A22CD51F /* sensor_fusion.cpp */,
+				E263B8416FF16D87FDB46B7158244573 /* serialpassthrough.cpp */,
+				E646A383570D094757FC022D5A76A6AD /* settings.cpp */,
+				C726E6BF1DA3FCE0502D528FB02EC246 /* String+VersionCompare.swift */,
+				3A86F543792981A874131E8759334EC0 /* switch.cpp */,
+				83F043A9D35B6A8872F99249B54F54CE /* task.cpp */,
+				6186A0BD15949351453671140CF9B74B /* threadpool.cpp */,
+				E79A8DAD2CFB6932DE688C651FCD008D /* timer.cpp */,
+				037AC051FD3CCA959F9FAEBD131FDDDA /* utils.cpp */,
+				6068D17E1D9D9146923EE6285413C8BE /* version.cpp */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A12912F829EF6D991E44CB61A2519CDC /* Bolts-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				F4C609CCB8B9B593AF09046B155DF64D /* Errors.swift */,
+				69876F026266ED979F1B48EFE0387DF0 /* Executor.swift */,
+				CCA4701BAAB06C24139B9C2B8BE5AC64 /* Task.swift */,
+				48B23EADFEAF607F5C6E639378AC8E46 /* Task+ContinueWith.swift */,
+				81541EFD1850F4DEF4085A6FC8CE065E /* Task+Delay.swift */,
+				980DCD857F54DE51D1CC25BD3DFE111F /* Task+WhenAll.swift */,
+				32AAA3E3639AF2871458B0F887196001 /* Task+WhenAny.swift */,
+				2608CDBE743C13679A29584093A4A2D0 /* TaskCompletionSource.swift */,
+				08DF44985AB9D3BBFAD13B1DD8FDBC0A /* Support Files */,
+			);
+			name = "Bolts-Swift";
+			path = "Bolts-Swift";
+			sourceTree = "<group>";
+		};
+		A2260860977E4AAEC3B3ACC3D9EA30FA /* Pods-MMR-Swift-Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				3EC4D225FAC6BC19DC19029A11279CDB /* Pods-MMR-Swift-Tutorial.modulemap */,
+				150A95C94E5F9DF882DEBAAD46E042F9 /* Pods-MMR-Swift-Tutorial-acknowledgements.markdown */,
+				920F6AB17B5DA9951014FCB62B4C9AF8 /* Pods-MMR-Swift-Tutorial-acknowledgements.plist */,
+				4C8722755D4C095EE0EB6EF8DBDCD54A /* Pods-MMR-Swift-Tutorial-dummy.m */,
+				5A694B441A1076906AAF80F0A0D0D0BC /* Pods-MMR-Swift-Tutorial-frameworks.sh */,
+				7B8A7526742F059C401503EE3B63458D /* Pods-MMR-Swift-Tutorial-Info.plist */,
+				3DA16FCA7EF5E50DEEF1F0EED66159F4 /* Pods-MMR-Swift-Tutorial-umbrella.h */,
+				55C0D33C482D43F8A2CB5EA375A91D5A /* Pods-MMR-Swift-Tutorial.debug.xcconfig */,
+				05F51D645900589A2FDD72842BDBA6F7 /* Pods-MMR-Swift-Tutorial.release.xcconfig */,
+			);
+			name = "Pods-MMR-Swift-Tutorial";
+			path = "Target Support Files/Pods-MMR-Swift-Tutorial";
+			sourceTree = "<group>";
+		};
+		ABEA70F68CD4BD2A6FB45DF3317F4BB1 /* Pods-MMR-Swift-TutorialTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FF68213E582760C9398B1145CD3EC70 /* Pods-MMR-Swift-TutorialTests.modulemap */,
+				924D00F98D9A3A9E34A6DD44F913CE36 /* Pods-MMR-Swift-TutorialTests-acknowledgements.markdown */,
+				DDEEF008691ADF227282885838D6A9D3 /* Pods-MMR-Swift-TutorialTests-acknowledgements.plist */,
+				F78AE717D0D39FF354B43E5A21A886A8 /* Pods-MMR-Swift-TutorialTests-dummy.m */,
+				64B3CD649E65E045E3AB558B3A51F6E9 /* Pods-MMR-Swift-TutorialTests-Info.plist */,
+				8F6AF808D5948BFD1F4EACFFB0683C57 /* Pods-MMR-Swift-TutorialTests-umbrella.h */,
+				3434308D925B199AC81C0F1BCDF7C177 /* Pods-MMR-Swift-TutorialTests.debug.xcconfig */,
+				4B8515F12E6B3A07E573017DE224CC26 /* Pods-MMR-Swift-TutorialTests.release.xcconfig */,
+			);
+			name = "Pods-MMR-Swift-TutorialTests";
+			path = "Target Support Files/Pods-MMR-Swift-TutorialTests";
+			sourceTree = "<group>";
+		};
+		AEEE5D61FAA6D3E4F05615E334686CF0 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				C7EB65226F8AE2F0F76E7D10F62A011F /* Cocoa.framework */,
+				6B7FEFDAFA55585B1AFC420EF1123B1C /* CoreBluetooth.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		C8EC310D3E24FA7C836B04DF59C5F7EF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F5D080EFAF104D9EEB2CBB187324AB0 /* iOSDFULibrary.modulemap */,
+				FE5AC5D106363AE5FEB71D0010B4EF08 /* iOSDFULibrary-dummy.m */,
+				CD28328A5324440BABA0904B7F3C1D57 /* iOSDFULibrary-Info.plist */,
+				FF1F239475F3F2FC92BD52E4A86CA74E /* iOSDFULibrary-prefix.pch */,
+				DA001B0E2B5E8D9F4132DC2593CCC8B0 /* iOSDFULibrary-umbrella.h */,
+				27ABE117E6191E2456A00F5760993C5D /* iOSDFULibrary.debug.xcconfig */,
+				7A36D7A5CF038055C3909206DF7CA79D /* iOSDFULibrary.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/iOSDFULibrary";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				738B4A928086831F088A7853C70B24CE /* Frameworks */,
+				E29835E2D29C170A9A2B55FCAC74BC3A /* Pods */,
+				5D3DE0EE4D6F4D8C2CAB980788BF351C /* Products */,
+				317522D4F07B81AAB606C6BCD410FBE6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D7BCB0B471B6B8ED71824D6BDD6C62F3 /* AsyncUtils */ = {
+			isa = PBXGroup;
+			children = (
+				73F3064E34D3E822D1A13FF98A7AD320 /* MblMwDataSignal+Async.swift */,
+				3B2E256DE234CB05D93EE4FA73CBB548 /* MblMwEvent+Async.swift */,
+				F46DF8F501AF521AB21685F7B67EDC43 /* MetaWear+Async.swift */,
+				254C889B7358A85A865E1B83D10707A1 /* MetaWear+LED.swift */,
+			);
+			name = AsyncUtils;
+			sourceTree = "<group>";
+		};
+		D8C33DFD527EAB88A6CD94DB54769729 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				6B99B62F42E1FA44931F8DCA5C60664F /* MetaWear+Mock.swift */,
+				6A4ACA7BE6B527287F2CDA5B59946087 /* MetaWearScanner+Mock.swift */,
+				2AF0E7488723C95E89C14025E89EF322 /* MockModule.swift */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
+		E29835E2D29C170A9A2B55FCAC74BC3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A12912F829EF6D991E44CB61A2519CDC /* Bolts-Swift */,
+				6EFBA6A0509EEA163C37A95CB00FB169 /* iOSDFULibrary */,
+				800896FBFFA351DBCAEA943CAAD67CA8 /* MetaWear */,
+				2EBB7B0B6325565462A1D3FA1AC5FF5C /* ZIPFoundation */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0099AC8F357A0B9BCF42A6E20B1A4CBB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF47468436110BF82E1EAC88241E54C7 /* iOSDFULibrary-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56516ED6B2109D7E115312AA41E6DFE6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1868A2015A74F904EF1E46279DC3957B /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B83C5F07CD68BC0067F1AFC6B599423 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E7058AE536A0791E9644B1695E75E23 /* Pods-MMR-Swift-Tutorial-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B960716604899BFB80CC96DA8F5695 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7C8E677170643E19AEF2EDB99D28C4E /* ZIPFoundation-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A95136DEF840183C5325690AD75EB1C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD0B4F1F0BDC22B944BA2B0AD20808E6 /* Bolts-Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3EDBA785BD99FD1E3125B72E982BED2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D8F6339DCF1D4CA859A7275E488AB2B /* MetaWear-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCC11ABCF879CAF17B91B359E6B374D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6871191B07F625C38CB9CE5F4A99E899 /* Pods-MMR-Swift-TutorialTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3683E414E6CC5FCB81C925C0B9A31FB1 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C28A507C09D11B85976FFB5316312E /* Build configuration list for PBXNativeTarget "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests" */;
+			buildPhases = (
+				56516ED6B2109D7E115312AA41E6DFE6 /* Headers */,
+				43B390C1A836D22E2E456D2B48504428 /* Sources */,
+				F1EDFFD4FD6FDB9C9E9F18AEF5879E28 /* Frameworks */,
+				4DFB13C47EEFEDE19707EF13CCB5A48C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				727444691915202A5C3BCA405155739A /* PBXTargetDependency */,
+				C77267DD06A768233DC91E138F6B37BA /* PBXTargetDependency */,
+				D84B4B1183C52E52B780165149AC40E2 /* PBXTargetDependency */,
+				9D7D5A066123ECECA839EDA588F3B4E1 /* PBXTargetDependency */,
+			);
+			name = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests";
+			productName = "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests";
+			productReference = E44F019AEC522FF742472430074D4C86 /* Pods_MMR_Swift_Tutorial_MMR_Swift_TutorialUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3E8BB3BAFA6478784A9A7DD76C8A1F3C /* MetaWear */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0526B3F818E04B096E2E7FD83F87AE00 /* Build configuration list for PBXNativeTarget "MetaWear" */;
+			buildPhases = (
+				F3EDBA785BD99FD1E3125B72E982BED2 /* Headers */,
+				AA326E7B398AD546D599E2E61B88F317 /* Sources */,
+				2453F01646E500CED4D8CCD6E463E2CD /* Frameworks */,
+				46B3EEABAC7C28BAC1C536AD02A02777 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F49B8B55B8BBB4A43464172C5FCA9D17 /* PBXTargetDependency */,
+				4BEFABEA4BFB3BE69E402939D68300CF /* PBXTargetDependency */,
+			);
+			name = MetaWear;
+			productName = MetaWear;
+			productReference = 7DF415FCE4EC0E6B83191E69BD55A61F /* MetaWear.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C2EFFC4F01BBC6F90C1D75192762811 /* Pods-MMR-Swift-Tutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDD045FF178D1F9B8DAB1228C6783E0C /* Build configuration list for PBXNativeTarget "Pods-MMR-Swift-Tutorial" */;
+			buildPhases = (
+				7B83C5F07CD68BC0067F1AFC6B599423 /* Headers */,
+				8E284D8D8110A7D6F8370BC552F1A508 /* Sources */,
+				74A7B3FEDA7F335425066E1C928ED528 /* Frameworks */,
+				4709FFFFE49E248990EEAC9ACD3DD7B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6CD4AB56D877840047ABE445F05598C /* PBXTargetDependency */,
+				BF69989D70D8C8082FE0079D56C05CD8 /* PBXTargetDependency */,
+				AA6320314B065FF536D006BC148390BE /* PBXTargetDependency */,
+				D28A9B938601D8F0CCB24B0E5C9BFB23 /* PBXTargetDependency */,
+			);
+			name = "Pods-MMR-Swift-Tutorial";
+			productName = "Pods-MMR-Swift-Tutorial";
+			productReference = AB78C1A5915D701157866E2E498E1DCA /* Pods_MMR_Swift_Tutorial.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9506C7FCDAE6E6967A99655F452EEE93 /* iOSDFULibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE6DD71A172839D19FC690F05D22DAAE /* Build configuration list for PBXNativeTarget "iOSDFULibrary" */;
+			buildPhases = (
+				0099AC8F357A0B9BCF42A6E20B1A4CBB /* Headers */,
+				57B117DA65847D531AAABA444FECA0EA /* Sources */,
+				3E5A9EFAB91578C8A3C46CFBBF0796AF /* Frameworks */,
+				3B62C8211910C65F418774170EE686BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE930F3B536B559DED413006F065AADE /* PBXTargetDependency */,
+			);
+			name = iOSDFULibrary;
+			productName = iOSDFULibrary;
+			productReference = 21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		97C3A85172B0D5130273BCC1B5EB1CD4 /* Pods-MMR-Swift-TutorialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35C742ACBF0AF125630DE484C004A6BD /* Build configuration list for PBXNativeTarget "Pods-MMR-Swift-TutorialTests" */;
+			buildPhases = (
+				FDCC11ABCF879CAF17B91B359E6B374D /* Headers */,
+				23C035448A2341BA4493E1AA9BA3EB28 /* Sources */,
+				FACD69322CFF8127F60C62B184F546EA /* Frameworks */,
+				DB71EBE4B33CDA5A5DBC53BADC2BD33A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				460AABBF200754631EB593E507A7A6F1 /* PBXTargetDependency */,
+			);
+			name = "Pods-MMR-Swift-TutorialTests";
+			productName = "Pods-MMR-Swift-TutorialTests";
+			productReference = 1966C24E1D4A8A2110D4F1F0289B55B1 /* Pods_MMR_Swift_TutorialTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AA15C8469D67684160CC2A7098EB841C /* ZIPFoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C44FFEE898601335B0E88BA93130774C /* Build configuration list for PBXNativeTarget "ZIPFoundation" */;
+			buildPhases = (
+				90B960716604899BFB80CC96DA8F5695 /* Headers */,
+				4DA67E3F97425F0C315966855D5021C3 /* Sources */,
+				8B40A94132AA191957EFA86CCFB2451E /* Frameworks */,
+				00BBBB3C6C535E607B26A01F1A6F568C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZIPFoundation;
+			productName = ZIPFoundation;
+			productReference = 48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA1CEDB360B77644C934EAD86B37FCB5 /* Bolts-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F406A98285E3912F5E5016B5E53388D /* Build configuration list for PBXNativeTarget "Bolts-Swift" */;
+			buildPhases = (
+				A95136DEF840183C5325690AD75EB1C9 /* Headers */,
+				16BF5BC40D63BBB1DB055C7EA3B32DAE /* Sources */,
+				4BB6FD737655D82BCF9961C18F3E59CD /* Frameworks */,
+				AB2F568822DB51F2BA7BB9B08226F20E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bolts-Swift";
+			productName = "Bolts-Swift";
+			productReference = 1579A0986D70C32D7BED1A855C31EF4B /* BoltsSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 5D3DE0EE4D6F4D8C2CAB980788BF351C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA1CEDB360B77644C934EAD86B37FCB5 /* Bolts-Swift */,
+				9506C7FCDAE6E6967A99655F452EEE93 /* iOSDFULibrary */,
+				3E8BB3BAFA6478784A9A7DD76C8A1F3C /* MetaWear */,
+				6C2EFFC4F01BBC6F90C1D75192762811 /* Pods-MMR-Swift-Tutorial */,
+				3683E414E6CC5FCB81C925C0B9A31FB1 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests */,
+				97C3A85172B0D5130273BCC1B5EB1CD4 /* Pods-MMR-Swift-TutorialTests */,
+				AA15C8469D67684160CC2A7098EB841C /* ZIPFoundation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00BBBB3C6C535E607B26A01F1A6F568C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B62C8211910C65F418774170EE686BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46B3EEABAC7C28BAC1C536AD02A02777 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4709FFFFE49E248990EEAC9ACD3DD7B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DFB13C47EEFEDE19707EF13CCB5A48C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB2F568822DB51F2BA7BB9B08226F20E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB71EBE4B33CDA5A5DBC53BADC2BD33A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16BF5BC40D63BBB1DB055C7EA3B32DAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D66DF938C9BDF3C213F899D4DB9A3A4 /* Bolts-Swift-dummy.m in Sources */,
+				E571F1933D0E6E24246A085B32B2DE96 /* Errors.swift in Sources */,
+				3854C0BF7A13EC7DF3C740EDE5EA0DE4 /* Executor.swift in Sources */,
+				66D02D1A2269962D6CE65673CF601511 /* Task+ContinueWith.swift in Sources */,
+				52B8275D2CF369551F3CC746398A106C /* Task+Delay.swift in Sources */,
+				7772ACAB44BDC501C2BE20244B576F5E /* Task+WhenAll.swift in Sources */,
+				84E49AA4AEBF2D359BE494195AA77EF3 /* Task+WhenAny.swift in Sources */,
+				552CB2A6FEFD51F4AF0CBFCF5A94F414 /* Task.swift in Sources */,
+				8D2A10CB374DFE57C0D8F0F802C9E6EE /* TaskCompletionSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C035448A2341BA4493E1AA9BA3EB28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD0D51AD4BB95DD1C90D40826A911A4 /* Pods-MMR-Swift-TutorialTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43B390C1A836D22E2E456D2B48504428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CC0688726069DB5B89F8A59ADCCB72 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DA67E3F97425F0C315966855D5021C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7AFAD93127546317263366CD9C141D0 /* Archive+Reading.swift in Sources */,
+				2DEF40D733DE5C02033E5F43B245931B /* Archive+Writing.swift in Sources */,
+				3E05DD904699E50A6249950CFE576365 /* Archive.swift in Sources */,
+				F460BCF117AB0FDA79515684FA825D9F /* Data+Compression.swift in Sources */,
+				590D3A57F551FD6CBCEBA49A4F38E728 /* Data+Serialization.swift in Sources */,
+				500185FD18EE4387BA8613DE4012916F /* Entry.swift in Sources */,
+				0ACF45BCC7E9E42588E92BB6D2A037F5 /* FileManager+ZIP.swift in Sources */,
+				9101A41D09693426AE468BA928522AD3 /* ZIPFoundation-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57B117DA65847D531AAABA444FECA0EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FC9A4F1644D56671E43BC6F85251E41 /* ButtonlessDFU.swift in Sources */,
+				125A548FF3D53833703E89351DCADF1F /* crc32.swift in Sources */,
+				6DF35730D0DB7708D93FED45BD72B705 /* Data.swift in Sources */,
+				E07AE62C0698CDBA95E2286846A8F01C /* DFUCharacteristic.swift in Sources */,
+				BD21015DE840BBB0743D331F2155B0E6 /* DFUController.swift in Sources */,
+				5DB64EB90726854C27B2ADD4631E6A04 /* DFUControlPoint.swift in Sources */,
+				68E45B8CCA8C415952934FD26B7DBF5E /* DFUExecutor.swift in Sources */,
+				C6AECBDC89EC0EBFA7364D09A864AF79 /* DFUFirmware.swift in Sources */,
+				68258A8CF4D13E31C8F1F844B207F054 /* DFUPacket.swift in Sources */,
+				C0BE3A9E47F29136E6BC3C1CC2E1BCF8 /* DFUPeripheral.swift in Sources */,
+				3704D5A08069ACD7953E9D49FB1E4107 /* DFUPeripheralDelegate.swift in Sources */,
+				36A2944A6A09F6C88681F34FE90CB792 /* DFUPeripheralSelector.swift in Sources */,
+				25A6239D3392F3F1E7E87AED443369FA /* DFUPeripheralSelectorDelegate.swift in Sources */,
+				777A3AACDC4B2E9402C9C3FDD05AEFA6 /* DFUService.swift in Sources */,
+				903D4213A0BCA654098D896172AAE3CB /* DFUServiceController.swift in Sources */,
+				E1C79764C092B880D39702E8802593F9 /* DFUServiceDelegate.swift in Sources */,
+				59BA42567787E5CEEE639140D13E87B2 /* DFUServiceInitiator.swift in Sources */,
+				FFEF840F03F964B5446049C02CF7AA0C /* DFUServiceSelector.swift in Sources */,
+				68E919441075A24AB7FC3D5514249E7D /* DFUStarterPeripheral.swift in Sources */,
+				47DF2EE9A3CF8AF785BCD11728A6ADAF /* DFUStream.swift in Sources */,
+				D141AD7B1C8B8D419245F72F0A7E12BC /* DFUStreamBin.swift in Sources */,
+				1158161FDFF9498BE35C1DE3ACB4D58C /* DFUStreamHex.swift in Sources */,
+				C05CE6FEE34993DC2BAAE6114628B223 /* DFUStreamZip.swift in Sources */,
+				B80155B51466585695043C837FF8C836 /* DFUUuidHelper.swift in Sources */,
+				53498891A1CAE81001C5A8C4B065D61B /* DFUVersion.swift in Sources */,
+				368CB12B134FDFD37A3CFCBA31E9E001 /* Double.swift in Sources */,
+				73B3F4EBE4172207B2B20B94A532C313 /* IntelHex2BinConverter.swift in Sources */,
+				2EEAEF1C950D23B56AC0D4101B97D2B2 /* iOSDFULibrary-dummy.m in Sources */,
+				3776AD5B91BD314EAAC1C49A74AB78D9 /* LegacyDFUExecutor.swift in Sources */,
+				169A9DB52F6476D00800D86812CC3E03 /* LegacyDFUPeripheral.swift in Sources */,
+				1D5FA5EDA37E8A8661BF48B32B09EB33 /* LegacyDFUPeripheralDelegate.swift in Sources */,
+				9908892E3C2C364F924AC9D57F675606 /* LegacyDFUService.swift in Sources */,
+				42A1F877667560B594B0CC6C865C78F9 /* LegacyDFUServiceInitiator.swift in Sources */,
+				F485D4E1A1A433219760129EF19F3ABF /* LoggerDelegate.swift in Sources */,
+				B0B2C9F6F74ED8451A45DBE9158A3FB7 /* LoggerHelper.swift in Sources */,
+				EBFBD7B1B7BC6A210690B0A9994E4274 /* Manifest.swift in Sources */,
+				7D123461A3F15E0CF02067277B340B06 /* ManifestFirmwareInfo.swift in Sources */,
+				1C616CFFD9F386163F090BE8D9A6E6AE /* SecureDFUControlPoint.swift in Sources */,
+				2AEBD1E4E99CFA736A749D3DFB843E96 /* SecureDFUExecutor.swift in Sources */,
+				7729AB2FFD6B941FAE7F0940692C9172 /* SecureDFUPacket.swift in Sources */,
+				18E114A5E7E31FC68BC5657362A9218E /* SecureDFUPeripheral.swift in Sources */,
+				0562229E03E8C098F78E75CDA37BC2A1 /* SecureDFUPeripheralDelegate.swift in Sources */,
+				BDE61C8A837786AAEEF632BB74FA50B1 /* SecureDFUService.swift in Sources */,
+				D6D6A18618833FA80DE99AAF3D6593E3 /* SecureDFUServiceInitiator.swift in Sources */,
+				E11A19B82E91C1A42B7885E81B68F8B8 /* SoftdeviceBootloaderInfo.swift in Sources */,
+				1266E223EF7D2F8C9FB1ACF3BFEFE0E1 /* ZipArchive.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E284D8D8110A7D6F8370BC552F1A508 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51E4FB6F98A49E8CAD3D6A184848D4D1 /* Pods-MMR-Swift-Tutorial-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA326E7B398AD546D599E2E61B88F317 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BFCC01DE4DBD5E1B935BEEB05EC1D0B /* accelerometer.cpp in Sources */,
+				2E38D11C9C7EF32EC1356EA7BF0D0F4E /* accelerometer_bosch.cpp in Sources */,
+				5C191F4BBC4B2860BB19E55B5463F7F2 /* accelerometer_mma8452q.cpp in Sources */,
+				18282E087A8BEA6A34CCD9CD7098E419 /* ambientlight_ltr329.cpp in Sources */,
+				FC9C0AAFE065C05A687473FB5B00FBD9 /* anonymous_datasignal.cpp in Sources */,
+				FD61E5A6E9CB4AE70886017ADFFAC3AF /* async_creator.cpp in Sources */,
+				86C316EBB8869866A0C624D2AAE08C70 /* barometer_bosch.cpp in Sources */,
+				FCEB50B5F5061F4679CA5BB2567D11D7 /* Bridging.swift in Sources */,
+				2E6A357BB37A207536AF41B4A612C7D9 /* cbindings.swift in Sources */,
+				974D2769A7C93E420F21FE3B48075280 /* CBUUID.swift in Sources */,
+				9F54E6D184BFF03C949C4514EEC6D329 /* colordetector_tcs34725.cpp in Sources */,
+				5C4AE18DA97FBB5A3D931DB963FB38F3 /* conductance.cpp in Sources */,
+				FC612F14FDE3F843F4F3344799469ED6 /* datainterpreter.cpp in Sources */,
+				87C8A17FDF19103DBC3A2D325F60CD0B /* dataprocessor.cpp in Sources */,
+				BBC71ECDC3AF6442A5547163F81693C1 /* dataprocessor_config.cpp in Sources */,
+				79EAA6690003ACB8732AAAA49A4F6AC8 /* datasignal.cpp in Sources */,
+				4B07D61AAF4FA6E719A5B8A592C976BB /* debug.cpp in Sources */,
+				CCC264CC3A173962066C6E06541665EF /* DeviceInformation.swift in Sources */,
+				B448B2CC83BE6BFF622B906A583AC3EB /* dfu_operations.cpp in Sources */,
+				E54E68FAA304AB6827D80EF0DF49A0D7 /* dfu_operations_details.cpp in Sources */,
+				2425DAE6BEB6A31E286C45B5EAA68225 /* dfu_utility.cpp in Sources */,
+				437DC765FEFA8B1DA46F1B08AA6DDA26 /* event.cpp in Sources */,
+				B5AAE56A027096929EDDEA62670BC358 /* file_operations.cpp in Sources */,
+				AB29A2F589A8FE56D09EA33571A18A54 /* FirmwareBuild.swift in Sources */,
+				8DA366AE9C919F4904A76954BFB6D9BD /* FirmwareServer.swift in Sources */,
+				CDE710AEBC6B0C7C3C5AEA11CF6DD542 /* gpio.cpp in Sources */,
+				E10B89018271E8CDD83048188D760639 /* gyro_bmi160.cpp in Sources */,
+				B20C62A90FCA3CB70BCC3F919125E501 /* haptic.cpp in Sources */,
+				13A3BFFEB290F056685F587D6A9D0EEF /* humidity_bme280.cpp in Sources */,
+				E2BBE44E74AFD27D280AC9876161E0CC /* ibeacon.cpp in Sources */,
+				BED23FE71A07D2991B60DDB1B462FDE7 /* led.cpp in Sources */,
+				14437DA8A5054F302AB7BE2E1FB4157B /* LogDelegate.swift in Sources */,
+				EAC2E48F71C4C5535C33957C110329B9 /* logging.cpp in Sources */,
+				15EA608FDC5B8317C9E1B16F83D1FC07 /* macro.cpp in Sources */,
+				88E18AE13E8C51259DB5B1D34D193AB0 /* magnetometer_bmm150.cpp in Sources */,
+				58238DF343D85ABCBEAC753C5289FE23 /* MblMwDataSignal+Async.swift in Sources */,
+				4985ABA3073A063F57C0FC3844A5425A /* MblMwEvent+Async.swift in Sources */,
+				D32EC02A2CD3F4729F905DB7D9A6F509 /* MblMwGattChar.swift in Sources */,
+				AFEDE3197DB0C152DCF76E3584F9C1BA /* memory.cpp in Sources */,
+				8DD3FF9DD5D11671AC810317CF746E82 /* MetaWear+Async.swift in Sources */,
+				B2B6875B5DB9CAEB05C867DC0EBE1452 /* MetaWear+Firmware.swift in Sources */,
+				1E1279DC13CE26B18442115844EF9D06 /* MetaWear+LED.swift in Sources */,
+				CC4C2DF118A1E1A0701DF8917ED5E849 /* MetaWear+Mock.swift in Sources */,
+				39EA507A5A5D096BECF61CF10588B301 /* MetaWear-dummy.m in Sources */,
+				F0F305141687A0C4DC63F4B8C581A8AA /* MetaWear.swift in Sources */,
+				67A2F1985397603972B33BD8252FB96E /* metawearboard.cpp in Sources */,
+				DF08090F30C7D133BFC3B4C78CB1CC91 /* MetaWearData.swift in Sources */,
+				F7178DB0896B04E33D849A488B2558F4 /* MetaWearScanner+Mock.swift in Sources */,
+				1D7538718EBF49139E5AF58A5CE862D0 /* MetaWearScanner.swift in Sources */,
+				542993C1EE32314BB844CB51B583E079 /* miniz.cpp in Sources */,
+				D39EC93B8A212B1C86C00CA846123546 /* MockModule.swift in Sources */,
+				50016290BB89491EBB41DD177AFF326D /* moduleinfo.cpp in Sources */,
+				F3C0E4CA2273C7704B27F6DCAAA21BDC /* multichanneltemperature.cpp in Sources */,
+				9BF8DC92724BDB9FFEC333D5CBE78D15 /* neopixel.cpp in Sources */,
+				3A0C6B20D5D7000391117B84F7A3E991 /* proximity_tsl2671.cpp in Sources */,
+				7D6AF38010FFD809CF4A5FECB5BD7E4B /* responseheader.cpp in Sources */,
+				CCCB78B539252997BB8C1912EC533463 /* ScannerModel.swift in Sources */,
+				8333979DBD99326D60C9BDFE21CF7F01 /* sensor_fusion.cpp in Sources */,
+				3CEDC0D8A94B6393ECE9EC38ECC8F611 /* serialpassthrough.cpp in Sources */,
+				4E854C7F5B21372357E7B148FB9985F8 /* settings.cpp in Sources */,
+				6998626DF848422F3EE1013747F23E0B /* String+VersionCompare.swift in Sources */,
+				D71E35DC3D81AF8DC3FA143383A25913 /* switch.cpp in Sources */,
+				5DDF6F5E02C919C410CB438D7B99DCD5 /* task.cpp in Sources */,
+				F2ECC5AB589E099B805D48A54688D1CB /* threadpool.cpp in Sources */,
+				D076CB4AB0F62EB9BECC5911AC9464F3 /* timer.cpp in Sources */,
+				DB7412AEE4187509B1CE50ACDC42861E /* utils.cpp in Sources */,
+				40B064C3B185514B37E5BFB6B5E94C5F /* version.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		460AABBF200754631EB593E507A7A6F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MMR-Swift-Tutorial";
+			target = 6C2EFFC4F01BBC6F90C1D75192762811 /* Pods-MMR-Swift-Tutorial */;
+			targetProxy = 4798A1881061F874A7FD30901D0B6DBC /* PBXContainerItemProxy */;
+		};
+		4BEFABEA4BFB3BE69E402939D68300CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iOSDFULibrary;
+			target = 9506C7FCDAE6E6967A99655F452EEE93 /* iOSDFULibrary */;
+			targetProxy = C998C43E98F77D413AD3D3C42CD8E808 /* PBXContainerItemProxy */;
+		};
+		727444691915202A5C3BCA405155739A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Bolts-Swift";
+			target = BA1CEDB360B77644C934EAD86B37FCB5 /* Bolts-Swift */;
+			targetProxy = B8AE9F4EBD295321EFE3A196ADAE7A06 /* PBXContainerItemProxy */;
+		};
+		9D7D5A066123ECECA839EDA588F3B4E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iOSDFULibrary;
+			target = 9506C7FCDAE6E6967A99655F452EEE93 /* iOSDFULibrary */;
+			targetProxy = 1C3C0A86EFB2DF3015DEF3DC157001C4 /* PBXContainerItemProxy */;
+		};
+		AA6320314B065FF536D006BC148390BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZIPFoundation;
+			target = AA15C8469D67684160CC2A7098EB841C /* ZIPFoundation */;
+			targetProxy = ACFD64D8085DD1B03D1D845B34228815 /* PBXContainerItemProxy */;
+		};
+		BE930F3B536B559DED413006F065AADE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZIPFoundation;
+			target = AA15C8469D67684160CC2A7098EB841C /* ZIPFoundation */;
+			targetProxy = F18FB07515F188C3871954E481BEFFA9 /* PBXContainerItemProxy */;
+		};
+		BF69989D70D8C8082FE0079D56C05CD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MetaWear;
+			target = 3E8BB3BAFA6478784A9A7DD76C8A1F3C /* MetaWear */;
+			targetProxy = F57F3367D5A4A60FC11048E1FACF82A3 /* PBXContainerItemProxy */;
+		};
+		C77267DD06A768233DC91E138F6B37BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MetaWear;
+			target = 3E8BB3BAFA6478784A9A7DD76C8A1F3C /* MetaWear */;
+			targetProxy = 2FDE75C7E65822C8F4AF2ECF95E14ADF /* PBXContainerItemProxy */;
+		};
+		D28A9B938601D8F0CCB24B0E5C9BFB23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iOSDFULibrary;
+			target = 9506C7FCDAE6E6967A99655F452EEE93 /* iOSDFULibrary */;
+			targetProxy = 55049A82370825574EFC9A25B62F797D /* PBXContainerItemProxy */;
+		};
+		D6CD4AB56D877840047ABE445F05598C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Bolts-Swift";
+			target = BA1CEDB360B77644C934EAD86B37FCB5 /* Bolts-Swift */;
+			targetProxy = AD2B2737C53C4375EB3B07311EC29342 /* PBXContainerItemProxy */;
+		};
+		D84B4B1183C52E52B780165149AC40E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZIPFoundation;
+			target = AA15C8469D67684160CC2A7098EB841C /* ZIPFoundation */;
+			targetProxy = 4FA806B93F84D1CD8DCE66E240C76680 /* PBXContainerItemProxy */;
+		};
+		F49B8B55B8BBB4A43464172C5FCA9D17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Bolts-Swift";
+			target = BA1CEDB360B77644C934EAD86B37FCB5 /* Bolts-Swift */;
+			targetProxy = B358FBD8DDA6CF81B5DAD010F199BCEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		054E70B52766787B7FC9B458BC50E809 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBF219A107C3A18F80030D0C67A6BFA6 /* Bolts-Swift.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Bolts-Swift/Bolts-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Bolts-Swift/Bolts-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Bolts-Swift/Bolts-Swift.modulemap";
+				PRODUCT_MODULE_NAME = BoltsSwift;
+				PRODUCT_NAME = BoltsSwift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0EDF95512350758DF5CCF6FAD5340F5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B07F09269621C499CD5A8886CEECB8C /* ZIPFoundation.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/ZIPFoundation/ZIPFoundation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZIPFoundation/ZIPFoundation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/ZIPFoundation/ZIPFoundation.modulemap";
+				PRODUCT_MODULE_NAME = ZIPFoundation;
+				PRODUCT_NAME = ZIPFoundation;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3759F3AC41EA4CDC029C45C8BE550F87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05F51D645900589A2FDD72842BDBA6F7 /* Pods-MMR-Swift-Tutorial.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-MMR-Swift-Tutorial/Pods-MMR-Swift-Tutorial-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-MMR-Swift-Tutorial/Pods-MMR-Swift-Tutorial.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		430C0A1F2A9CB52955BEC7CE69B7B629 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4B07C595556F7A0546EEDB55F1DE0DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A36D7A5CF038055C3909206DF7CA79D /* iOSDFULibrary.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/iOSDFULibrary/iOSDFULibrary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iOSDFULibrary/iOSDFULibrary-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/iOSDFULibrary/iOSDFULibrary.modulemap";
+				PRODUCT_MODULE_NAME = iOSDFULibrary;
+				PRODUCT_NAME = iOSDFULibrary;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		597E092427DF423992C59C814880FE96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		5D6A7567B24950DAD00EC7B004208C6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27ABE117E6191E2456A00F5760993C5D /* iOSDFULibrary.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/iOSDFULibrary/iOSDFULibrary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iOSDFULibrary/iOSDFULibrary-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/iOSDFULibrary/iOSDFULibrary.modulemap";
+				PRODUCT_MODULE_NAME = iOSDFULibrary;
+				PRODUCT_NAME = iOSDFULibrary;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		71E7A56A80DF1CC0A1A86DD04682332C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F1A480518610C402225F9CE0CAE7C07 /* Bolts-Swift.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Bolts-Swift/Bolts-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Bolts-Swift/Bolts-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Bolts-Swift/Bolts-Swift.modulemap";
+				PRODUCT_MODULE_NAME = BoltsSwift;
+				PRODUCT_NAME = BoltsSwift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		88BC9F021A189CA39012C61FA184F575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0036B212F436E8EFDF6D4A577CFFAA8E /* MetaWear.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/MetaWear/MetaWear-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MetaWear/MetaWear-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/MetaWear/MetaWear.modulemap";
+				PRODUCT_MODULE_NAME = MetaWear;
+				PRODUCT_NAME = MetaWear;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		96B074F43FF906522CB8B16FAEF30810 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85AD2F4F2D5A334BE284CA0229249659 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE646812B98847C51C0CCA974FE32C55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C0D33C482D43F8A2CB5EA375A91D5A /* Pods-MMR-Swift-Tutorial.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-MMR-Swift-Tutorial/Pods-MMR-Swift-Tutorial-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-MMR-Swift-Tutorial/Pods-MMR-Swift-Tutorial.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BB5BA01072F8427694C9AD3584BCD7AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B8515F12E6B3A07E573017DE224CC26 /* Pods-MMR-Swift-TutorialTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-MMR-Swift-TutorialTests/Pods-MMR-Swift-TutorialTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-MMR-Swift-TutorialTests/Pods-MMR-Swift-TutorialTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C1BACC766DAA173ACADF863002065498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F885A63F03114D1B9DC0F3CFBB99BE4F /* MetaWear.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/MetaWear/MetaWear-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MetaWear/MetaWear-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/MetaWear/MetaWear.modulemap";
+				PRODUCT_MODULE_NAME = MetaWear;
+				PRODUCT_NAME = MetaWear;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C2FDDE8C1A9900B9466694E4CFA670DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3434308D925B199AC81C0F1BCDF7C177 /* Pods-MMR-Swift-TutorialTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-MMR-Swift-TutorialTests/Pods-MMR-Swift-TutorialTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-MMR-Swift-TutorialTests/Pods-MMR-Swift-TutorialTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D06DDC7F7AEE9AD6CBE1E4FA9AED7F3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81EA18550FCA305D2BFCD2BB109A2F82 /* Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests/Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F95B2006F3D710CD35E5E9E095F1DB77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBDE9AB645A147EDD7D5973388408A84 /* ZIPFoundation.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/ZIPFoundation/ZIPFoundation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZIPFoundation/ZIPFoundation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/ZIPFoundation/ZIPFoundation.modulemap";
+				PRODUCT_MODULE_NAME = ZIPFoundation;
+				PRODUCT_NAME = ZIPFoundation;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0526B3F818E04B096E2E7FD83F87AE00 /* Build configuration list for PBXNativeTarget "MetaWear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88BC9F021A189CA39012C61FA184F575 /* Debug */,
+				C1BACC766DAA173ACADF863002065498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35C742ACBF0AF125630DE484C004A6BD /* Build configuration list for PBXNativeTarget "Pods-MMR-Swift-TutorialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2FDDE8C1A9900B9466694E4CFA670DC /* Debug */,
+				BB5BA01072F8427694C9AD3584BCD7AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				430C0A1F2A9CB52955BEC7CE69B7B629 /* Debug */,
+				597E092427DF423992C59C814880FE96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F406A98285E3912F5E5016B5E53388D /* Build configuration list for PBXNativeTarget "Bolts-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				054E70B52766787B7FC9B458BC50E809 /* Debug */,
+				71E7A56A80DF1CC0A1A86DD04682332C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C44FFEE898601335B0E88BA93130774C /* Build configuration list for PBXNativeTarget "ZIPFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EDF95512350758DF5CCF6FAD5340F5C /* Debug */,
+				F95B2006F3D710CD35E5E9E095F1DB77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4C28A507C09D11B85976FFB5316312E /* Build configuration list for PBXNativeTarget "Pods-MMR-Swift-Tutorial-MMR-Swift-TutorialUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96B074F43FF906522CB8B16FAEF30810 /* Debug */,
+				D06DDC7F7AEE9AD6CBE1E4FA9AED7F3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDD045FF178D1F9B8DAB1228C6783E0C /* Build configuration list for PBXNativeTarget "Pods-MMR-Swift-Tutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE646812B98847C51C0CCA974FE32C55 /* Debug */,
+				3759F3AC41EA4CDC029C45C8BE550F87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE6DD71A172839D19FC690F05D22DAAE /* Build configuration list for PBXNativeTarget "iOSDFULibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D6A7567B24950DAD00EC7B004208C6E /* Debug */,
+				4B07C595556F7A0546EEDB55F1DE0DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

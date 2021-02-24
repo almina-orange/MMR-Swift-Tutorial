@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_MMR_Swift_Tutorial_MMR_Swift_TutorialUITests : NSObject
+@end
+@implementation PodsDummy_Pods_MMR_Swift_Tutorial_MMR_Swift_TutorialUITests
+@end
