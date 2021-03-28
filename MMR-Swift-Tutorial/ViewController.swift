@@ -14,51 +14,89 @@ import MetaWearCpp
 //   The following method may cause serious errors.
 //   It is recommended to use another method.
 var vc: ViewController!
-var text: String = "" {
+var L_freqCounter = FrequencyCounter()
+var R_freqCounter = FrequencyCounter()
+
+var L_accTextBuff: String = "" {
+  didSet { DispatchQueue.main.async { vc.charaLabel.stringValue = L_accTextBuff } }
+}
+var L_gyroTextBuff: String = "" {
+  didSet { DispatchQueue.main.async { vc.charaLabel2.stringValue = L_gyroTextBuff } }
+}
+var R_accTextBuff: String = "" {
+  didSet { DispatchQueue.main.async { vc.charaLabel3.stringValue = R_accTextBuff } }
+}
+var R_gyroTextBuff: String = "" {
+  didSet { DispatchQueue.main.async { vc.charaLabel4.stringValue = R_gyroTextBuff } }
+}
+
+var L_raw_accRecordTextBuff: String = "" {
+  didSet { if vc.L_raw_csvMng.isRecording { vc.L_raw_csvMng.addRecordText(addText: L_raw_accRecordTextBuff) } }
+}
+var R_raw_accRecordTextBuff: String = "" {
+  didSet { if vc.R_raw_csvMng.isRecording { vc.R_raw_csvMng.addRecordText(addText: R_raw_accRecordTextBuff) } }
+}
+var L_accRecordTextBuff: String = "" {
+  didSet { if vc.L_csvMng.isRecording { vc.L_csvMng.addRecordBuffer(addText: L_accRecordTextBuff) } }
+}
+var R_accRecordTextBuff: String = "" {
+  didSet { if vc.R_csvMng.isRecording { vc.R_csvMng.addRecordBuffer(addText: R_accRecordTextBuff) } }
+}
+
+var L_freqTextBuff: String = "" {
   didSet {
-    DispatchQueue.main.async { vc.charaLabel.stringValue = text }
-//    if vc.csvMng.isRecording { vc.csvMng.addRecordText(addText: text) }
+    L_freqCounter.update()
+    if L_freqCounter.isFreqValueUpdated {
+      var freqTextBuff = "(L) BLE Frequency: "
+      freqTextBuff += String(format: "%.2f", L_freqCounter.freq)
+      freqTextBuff += "Hz"
+      DispatchQueue.main.async { vc.L_FreqLabel.stringValue = freqTextBuff }
+    }
   }
 }
-var text2: String = "" {
-  didSet { DispatchQueue.main.async { vc.charaLabel2.stringValue = text2 } }
-}
-var text3: String = "" {
+var R_freqTextBuff: String = "" {
   didSet {
-    DispatchQueue.main.async { vc.charaLabel3.stringValue = text3 }
-//    if vc.csvMng2.isRecording { vc.csvMng2.addRecordText(addText: text3) }
-  }
-}
-var text4: String = "" {
-  didSet { DispatchQueue.main.async { vc.charaLabel4.stringValue = text4 } }
-}
-var text5: String = "" {
-  didSet {
-    if vc.csvMng.isRecording { vc.csvMng.addRecordText(addText: text5) }
-  }
-}
-var text6: String = "" {
-  didSet {
-    if vc.csvMng2.isRecording { vc.csvMng2.addRecordText(addText: text6) }
+    R_freqCounter.update()
+    if R_freqCounter.isFreqValueUpdated {
+      var freqTextBuff = "(R) BLE Frequency: "
+      freqTextBuff += String(format: "%.2f", R_freqCounter.freq)
+      freqTextBuff += "Hz"
+      DispatchQueue.main.async { vc.R_FreqLabel.stringValue = freqTextBuff }
+    }
   }
 }
 
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
   @IBOutlet weak var tableView: NSTableView!
   
-  @IBOutlet weak var streamStartButton: NSButton!
+  @IBOutlet weak var recordButton: NSButton!
   @IBOutlet weak var charaLabel: NSTextField!
   @IBOutlet weak var charaLabel2: NSTextField!
   @IBOutlet weak var charaLabel3: NSTextField!
   @IBOutlet weak var charaLabel4: NSTextField!
+  @IBOutlet weak var L_FreqLabel: NSTextField!
+  @IBOutlet weak var R_FreqLabel: NSTextField!
+  
+  @IBOutlet weak var L_StreamPopUpButton: NSPopUpButton!
+  @IBOutlet weak var R_StreamPopUpButton: NSPopUpButton!
+  @IBOutlet weak var L_StreamButton: NSButton!
+  @IBOutlet weak var R_StreamButton: NSButton!
+  @IBOutlet weak var L_StreamStopButton: NSButton!
+  @IBOutlet weak var R_StreamStopButton: NSButton!
+  
+  @IBOutlet weak var filenameTextField: NSTextField!
   
   var scannerModel: ScannerModel!
+//  var L_freqCounter = FrequencyCounter()
+//  var R_freqCounter = FrequencyCounter()
   
   var debug: Bool!
 //  var format = DateFormatter()
   
-  let csvMng = CsvManager()
-  let csvMng2 = CsvManager()
+  let L_raw_csvMng = CsvManager()
+  let R_raw_csvMng = CsvManager()
+  let L_csvMng = CsvManager()
+  let R_csvMng = CsvManager()
   
   // MARK: View Life Cycle
   override func viewDidLoad() {
@@ -73,10 +111,15 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     
     vc = self
     
-//    self.csvMng.setFileNameText(setText: "sample1-acc")
-//    self.csvMng2.setFileNameText(setText: "sample2-acc")
-    self.csvMng.setFileNameText(setText: "MMR-right")
-    self.csvMng2.setFileNameText(setText: "MMR-left")
+    L_StreamPopUpButton.removeAllItems()
+    R_StreamPopUpButton.removeAllItems()
+    
+//    self.L_raw_csvMng.setFileNameText(setText: "sample1-acc")
+//    self.R_raw_csvMng.setFileNameText(setText: "sample2-acc")
+    self.L_raw_csvMng.setFileNameText(setText: "MMR-left-raw")
+    self.R_raw_csvMng.setFileNameText(setText: "MMR-right-raw")
+    self.L_csvMng.setFileNameText(setText: "MMR-left")
+    self.R_csvMng.setFileNameText(setText: "MMR-right")
   }
   
   override func viewWillAppear() {
@@ -115,6 +158,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     if device.isConnectedAndSetup {
       connected.stringValue = "Connected!"
       connected.isHidden = false
+      L_StreamPopUpButton.addItem(withTitle: device.peripheral.identifier.uuidString)
+      R_StreamPopUpButton.addItem(withTitle: device.peripheral.identifier.uuidString)
     } else if scannerModel.items[row].isConnecting {
       connected.stringValue = "Connecting..."
       connected.isHidden = false
@@ -162,97 +207,101 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
 //      print("/** board **/")
 //      print(device.board!)
 //    }
-    
-    // MARK: (sample) Streaming Gyro
-    
-    if debug {
-      if device.peripheral.services != nil {
-        mbl_mw_gyro_bmi160_set_range(device.board, MBL_MW_GYRO_BMI160_RANGE_125dps)
-        mbl_mw_gyro_bmi160_set_odr(device.board, MBL_MW_GYRO_BMI160_ODR_100Hz)
-        mbl_mw_gyro_bmi160_write_config(device.board)
 
-        let signal = mbl_mw_gyro_bmi160_get_rotation_data_signal(device.board)!
-//        if device.peripheral.identifier.uuidString == "225B47EA-926D-428A-AAD9-6FF53F053578" {
-        if device.peripheral.identifier.uuidString == "9193BC93-E1B9-4B6C-8A6F-5DC3EAD72845" {
-          mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
-            let gyroscope: MblMwCartesianFloat = obj!.pointee.valueAs()
-            text2 = "[gyro]: " + String(obj!.pointee.epoch)
-              + " / x: " + String(gyroscope.x)
-              + " / y: " + String(gyroscope.y)
-              + " / z: " + String(gyroscope.z)
-  //          print("[gyro]: ", obj!.pointee.epoch, gyroscope, gyroscope.x, gyroscope.y, gyroscope.z)
-          }
-        } else {
-          mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
-            let gyroscope: MblMwCartesianFloat = obj!.pointee.valueAs()
-            text4 = "[gyro]: " + String(obj!.pointee.epoch)
-              + " / x: " + String(gyroscope.x)
-              + " / y: " + String(gyroscope.y)
-              + " / z: " + String(gyroscope.z)
-            //          print("[gyro]: ", obj!.pointee.epoch, gyroscope, gyroscope.x, gyroscope.y, gyroscope.z)
-          }
-        }
-        mbl_mw_gyro_bmi160_enable_rotation_sampling(device.board)
-        mbl_mw_gyro_bmi160_start(device.board)
-
-//        streamingCleanup[signal] = {
-//          mbl_mw_gyro_bmi160_stop(self.device.board)
-//          mbl_mw_gyro_bmi160_disable_rotation_sampling(self.device.board)
-//          mbl_mw_datasignal_unsubscribe(signal)
+//    // MARK: (sample) Streaming Gyro
+//
+//    if debug {
+//      if device.peripheral.services != nil {
+//        mbl_mw_gyro_bmi160_set_range(device.board, MBL_MW_GYRO_BMI160_RANGE_125dps)
+//        mbl_mw_gyro_bmi160_set_odr(device.board, MBL_MW_GYRO_BMI160_ODR_100Hz)
+//        mbl_mw_gyro_bmi160_write_config(device.board)
+//
+//        let signal = mbl_mw_gyro_bmi160_get_rotation_data_signal(device.board)!
+////        if device.peripheral.identifier.uuidString == "225B47EA-926D-428A-AAD9-6FF53F053578" {
+//        if device.peripheral.identifier.uuidString == "9193BC93-E1B9-4B6C-8A6F-5DC3EAD72845" {
+//          mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
+//            let gyroscope: MblMwCartesianFloat = obj!.pointee.valueAs()
+//            L_gyroTextBuff = "(L) [gyro]: " + String(obj!.pointee.epoch)
+//              + " / x: " + String(gyroscope.x)
+//              + " / y: " + String(gyroscope.y)
+//              + " / z: " + String(gyroscope.z)
+//          }
+//        } else {
+//          mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
+//            let gyroscope: MblMwCartesianFloat = obj!.pointee.valueAs()
+//            R_gyroTextBuff = "(R) [gyro]: " + String(obj!.pointee.epoch)
+//              + " / x: " + String(gyroscope.x)
+//              + " / y: " + String(gyroscope.y)
+//              + " / z: " + String(gyroscope.z)
+//          }
 //        }
-      }
-    }
-
-    // MARK: (sample) Streaming Acceleration
-    if debug {
-      if device.peripheral.services != nil {
-        print("/** debug **/")
-        mbl_mw_acc_bosch_set_range(device.board, MBL_MW_ACC_BOSCH_RANGE_2G)
-        mbl_mw_acc_set_odr(device.board, 100.0)
-        mbl_mw_acc_bosch_write_acceleration_config(device.board)
-
-        let signal = mbl_mw_acc_bosch_get_acceleration_data_signal(device.board)!
-
-//        if device.peripheral.identifier.uuidString == "225B47EA-926D-428A-AAD9-6FF53F053578" {
-        if device.peripheral.identifier.uuidString == "9193BC93-E1B9-4B6C-8A6F-5DC3EAD72845" {
-          mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
-            let acceleration: MblMwCartesianFloat = obj!.pointee.valueAs()
-            let format = DateFormatter()
-            format.dateFormat = "MMddHHmmssSS"
-            text = "[acc]: " + String(obj!.pointee.epoch)
-              + " / x: " + String(acceleration.x)
-              + " / y: " + String(acceleration.y)
-              + " / z: " + String(acceleration.z)
-            text5 = format.string(from: Date())
-              + "," + String(acceleration.x)
-              + "," + String(acceleration.y)
-              + "," + String(acceleration.z)
-          }
-        } else {
-          mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
-            let acceleration: MblMwCartesianFloat = obj!.pointee.valueAs()
-            let format = DateFormatter()
-            format.dateFormat = "MMddHHmmssSS"
-            text3 = "[acc]: " + String(obj!.pointee.epoch)
-              + " / x: " + String(acceleration.x)
-              + " / y: " + String(acceleration.y)
-              + " / z: " + String(acceleration.z)
-            text6 = format.string(from: Date())
-              + "," + String(acceleration.x)
-              + "," + String(acceleration.y)
-              + "," + String(acceleration.z)
-          }
-        }
-        mbl_mw_acc_enable_acceleration_sampling(device.board)
-        mbl_mw_acc_start(device.board)
-
-//        streamingCleanup[signal] = {
-//          mbl_mw_acc_stop(self.device.board)
-//          mbl_mw_acc_disable_acceleration_sampling(self.device.board)
-//          mbl_mw_datasignal_unsubscribe(signal)
+//        mbl_mw_gyro_bmi160_enable_rotation_sampling(device.board)
+//        mbl_mw_gyro_bmi160_start(device.board)
+//
+////        streamingCleanup[signal] = {
+////          mbl_mw_gyro_bmi160_stop(self.device.board)
+////          mbl_mw_gyro_bmi160_disable_rotation_sampling(self.device.board)
+////          mbl_mw_datasignal_unsubscribe(signal)
+////        }
+//      }
+//    }
+//
+//    // MARK: (sample) Streaming Acceleration
+//    if debug {
+//      if device.peripheral.services != nil {
+//        print("/** debug **/")
+//        mbl_mw_acc_bosch_set_range(device.board, MBL_MW_ACC_BOSCH_RANGE_2G)
+//        mbl_mw_acc_set_odr(device.board, 100.0)
+//        mbl_mw_acc_bosch_write_acceleration_config(device.board)
+//
+//        let signal = mbl_mw_acc_bosch_get_acceleration_data_signal(device.board)!
+//
+////        if device.peripheral.identifier.uuidString == "225B47EA-926D-428A-AAD9-6FF53F053578" {
+//        if device.peripheral.identifier.uuidString == "9193BC93-E1B9-4B6C-8A6F-5DC3EAD72845" {
+//          mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
+//            let acceleration: MblMwCartesianFloat = obj!.pointee.valueAs()
+//            let format = DateFormatter()
+//            format.dateFormat = "MMddHHmmssSS"
+//            L_accTextBuff = "(L) " + "[acc]: " + String(obj!.pointee.epoch)
+//              + " / x: " + String(acceleration.x)
+//              + " / y: " + String(acceleration.y)
+//              + " / z: " + String(acceleration.z)
+//            let accRecordText: String = format.string(from: Date())
+//              + "," + String(acceleration.x)
+//              + "," + String(acceleration.y)
+//              + "," + String(acceleration.z)
+//            L_raw_accRecordTextBuff = accRecordText
+//            L_accRecordTextBuff = accRecordText
+//            L_freqTextBuff = "---"  // just trigger
+//          }
+//        } else {
+//          mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
+//            let acceleration: MblMwCartesianFloat = obj!.pointee.valueAs()
+//            let format = DateFormatter()
+//            format.dateFormat = "MMddHHmmssSS"
+//            R_accTextBuff = "(R) " + "[acc]: " + String(obj!.pointee.epoch)
+//              + " / x: " + String(acceleration.x)
+//              + " / y: " + String(acceleration.y)
+//              + " / z: " + String(acceleration.z)
+//            let accRecordText: String = format.string(from: Date())
+//              + "," + String(acceleration.x)
+//              + "," + String(acceleration.y)
+//              + "," + String(acceleration.z)
+//            R_raw_accRecordTextBuff = accRecordText
+//            R_accRecordTextBuff = accRecordText
+//            R_freqTextBuff = "---"  // just trigger
+//          }
 //        }
-      }
-    }
+//        mbl_mw_acc_enable_acceleration_sampling(device.board)
+//        mbl_mw_acc_start(device.board)
+//
+////        streamingCleanup[signal] = {
+////          mbl_mw_acc_stop(self.device.board)
+////          mbl_mw_acc_disable_acceleration_sampling(self.device.board)
+////          mbl_mw_datasignal_unsubscribe(signal)
+////        }
+//      }
+//    }
     
 //    // MARK: (sample) Read Temperature???
 //    if debug && device.isConnectedAndSetup {
@@ -275,8 +324,6 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     return cell
   }
   
-  func setLabel(text: String) { charaLabel.stringValue = text }
-  
   @objc func tableViewDoubleClick(sender: AnyObject) {
     let device = scannerModel.items[tableView.clickedRow].device
     guard !device.isConnectedAndSetup else {
@@ -285,24 +332,177 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
         self.tableView.reloadData()
       }
+      L_StreamPopUpButton.removeItem(withTitle: device.peripheral.identifier.uuidString)
+      R_StreamPopUpButton.removeItem(withTitle: device.peripheral.identifier.uuidString)
       return
     }
     scannerModel.items[tableView.clickedRow].toggleConnect()
     tableView.reloadData()
   }
   
-  @IBAction func streamStartButtonPressed(_ sender: Any) {
-//    setLabel(text: text)
-    if csvMng.isRecording {
-      self.csvMng.stopRecording()
-      self.csvMng.saveSensorDataToCsv()
-      self.csvMng2.stopRecording()
-      self.csvMng2.saveSensorDataToCsv()
-      self.streamStartButton.title = "START"
-    }else{
-      self.csvMng.startRecording()
-      self.csvMng2.startRecording()
-      self.streamStartButton.title = "STOP"
+  @IBAction func L_streamButtonPressed(_ sender: NSButton) {
+    var device = scannerModel.items[0].device
+    for i in 0...scannerModel.items.count {
+      device = scannerModel.items[i].device
+      if L_StreamPopUpButton.titleOfSelectedItem == device.peripheral.identifier.uuidString { break }
+    }
+    
+    // MARK: (sample) Streaming Gyro
+    DispatchQueue.global().async {
+      if device.peripheral.services != nil {
+        mbl_mw_gyro_bmi160_set_range(device.board, MBL_MW_GYRO_BMI160_RANGE_125dps)
+        mbl_mw_gyro_bmi160_set_odr(device.board, MBL_MW_GYRO_BMI160_ODR_100Hz)
+        mbl_mw_gyro_bmi160_write_config(device.board)
+        
+        let signal = mbl_mw_gyro_bmi160_get_rotation_data_signal(device.board)!
+        mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
+          let gyroscope: MblMwCartesianFloat = obj!.pointee.valueAs()
+          L_gyroTextBuff = "(L) [gyro]: " + String(obj!.pointee.epoch)
+            + " / x: " + String(gyroscope.x)
+            + " / y: " + String(gyroscope.y)
+            + " / z: " + String(gyroscope.z)
+        }
+        mbl_mw_gyro_bmi160_enable_rotation_sampling(device.board)
+        mbl_mw_gyro_bmi160_start(device.board)
+      }
+    }
+    
+    // MARK: (sample) Streaming Acceleration
+    DispatchQueue.global().async {
+      if device.peripheral.services != nil {
+        mbl_mw_acc_bosch_set_range(device.board, MBL_MW_ACC_BOSCH_RANGE_2G)
+        mbl_mw_acc_set_odr(device.board, 100.0)
+        mbl_mw_acc_bosch_write_acceleration_config(device.board)
+        
+        let signal = mbl_mw_acc_bosch_get_acceleration_data_signal(device.board)!
+        
+        mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
+          let acceleration: MblMwCartesianFloat = obj!.pointee.valueAs()
+          let format = DateFormatter()
+          format.dateFormat = "MMddHHmmssSS"
+          L_accTextBuff = "(L) " + "[acc]: " + String(obj!.pointee.epoch)
+            + " / x: " + String(acceleration.x)
+            + " / y: " + String(acceleration.y)
+            + " / z: " + String(acceleration.z)
+          let accRecordText: String = format.string(from: Date())
+            + "," + String(acceleration.x)
+            + "," + String(acceleration.y)
+            + "," + String(acceleration.z)
+          L_raw_accRecordTextBuff = accRecordText
+          L_accRecordTextBuff = accRecordText
+          L_freqTextBuff = "---"  // just trigger
+        }
+        
+        mbl_mw_acc_enable_acceleration_sampling(device.board)
+        mbl_mw_acc_start(device.board)
+      }
+    }
+  }
+  
+  @IBAction func R_streamButtonPressed(_ sender: NSButton) {
+    var device = scannerModel.items[0].device
+    for i in 0...scannerModel.items.count {
+      device = scannerModel.items[i].device
+      if R_StreamPopUpButton.titleOfSelectedItem == device.peripheral.identifier.uuidString { break }
+    }
+    
+    // MARK: (sample) Streaming Gyro
+    DispatchQueue.global().async {
+      if device.peripheral.services != nil {
+        mbl_mw_gyro_bmi160_set_range(device.board, MBL_MW_GYRO_BMI160_RANGE_125dps)
+        mbl_mw_gyro_bmi160_set_odr(device.board, MBL_MW_GYRO_BMI160_ODR_100Hz)
+        mbl_mw_gyro_bmi160_write_config(device.board)
+
+        let signal = mbl_mw_gyro_bmi160_get_rotation_data_signal(device.board)!
+        mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
+          let gyroscope: MblMwCartesianFloat = obj!.pointee.valueAs()
+          R_gyroTextBuff = "(R) [gyro]: " + String(obj!.pointee.epoch)
+            + " / x: " + String(gyroscope.x)
+            + " / y: " + String(gyroscope.y)
+            + " / z: " + String(gyroscope.z)
+        }
+        mbl_mw_gyro_bmi160_enable_rotation_sampling(device.board)
+        mbl_mw_gyro_bmi160_start(device.board)
+      }
+    }
+    
+    // MARK: (sample) Streaming Acceleration
+    DispatchQueue.global().async {
+      if device.peripheral.services != nil {
+        mbl_mw_acc_bosch_set_range(device.board, MBL_MW_ACC_BOSCH_RANGE_2G)
+        mbl_mw_acc_set_odr(device.board, 100.0)
+        mbl_mw_acc_bosch_write_acceleration_config(device.board)
+        
+        let signal = mbl_mw_acc_bosch_get_acceleration_data_signal(device.board)!
+      
+        mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, obj) in
+          let acceleration: MblMwCartesianFloat = obj!.pointee.valueAs()
+          let format = DateFormatter()
+          format.dateFormat = "MMddHHmmssSS"
+          R_accTextBuff = "(R) " + "[acc]: " + String(obj!.pointee.epoch)
+            + " / x: " + String(acceleration.x)
+            + " / y: " + String(acceleration.y)
+            + " / z: " + String(acceleration.z)
+          let accRecordText: String = format.string(from: Date())
+            + "," + String(acceleration.x)
+            + "," + String(acceleration.y)
+            + "," + String(acceleration.z)
+          R_raw_accRecordTextBuff = accRecordText
+          R_accRecordTextBuff = accRecordText
+          R_freqTextBuff = "---"  // just trigger
+        }
+        
+        mbl_mw_acc_enable_acceleration_sampling(device.board)
+        mbl_mw_acc_start(device.board)
+      }
+    }
+  }
+  
+  @IBAction func L_StreamStopButtonPressed(_ sender: NSButton) {
+    var device = scannerModel.items[0].device
+    for i in 0...scannerModel.items.count {
+      device = scannerModel.items[i].device
+      if L_StreamPopUpButton.titleOfSelectedItem == device.peripheral.identifier.uuidString { break }
+    }
+    mbl_mw_acc_stop(device.board)
+    mbl_mw_acc_disable_acceleration_sampling(device.board)
+    mbl_mw_gyro_bmi160_stop(device.board)
+    mbl_mw_gyro_bmi160_disable_rotation_sampling(device.board)
+  }
+  
+  @IBAction func R_StreamStopButtonPressed(_ sender: NSButton) {
+    var device = scannerModel.items[0].device
+    for i in 0...scannerModel.items.count {
+      device = scannerModel.items[i].device
+      if R_StreamPopUpButton.titleOfSelectedItem == device.peripheral.identifier.uuidString { break }
+    }
+    mbl_mw_acc_stop(device.board)
+    mbl_mw_acc_disable_acceleration_sampling(device.board)
+    mbl_mw_gyro_bmi160_stop(device.board)
+    mbl_mw_gyro_bmi160_disable_rotation_sampling(device.board)
+  }
+  
+  @IBAction func recordButtonPressed(_ sender: NSButton) {
+    if L_raw_csvMng.isRecording {
+      self.L_raw_csvMng.stopRecording()
+      self.L_raw_csvMng.saveSensorDataToCsv()
+      self.R_raw_csvMng.stopRecording()
+      self.R_raw_csvMng.saveSensorDataToCsv()
+      self.L_csvMng.stopRecording()
+      self.L_csvMng.saveSensorDataToCsv()
+      self.R_csvMng.stopRecording()
+      self.R_csvMng.saveSensorDataToCsv()
+      self.recordButton.title = "START"
+    } else {
+      self.L_raw_csvMng.setFileNameText(setText: "MMR-left-raw-" + filenameTextField.stringValue)
+      self.R_raw_csvMng.setFileNameText(setText: "MMR-right-raw-" + filenameTextField.stringValue)
+      self.L_csvMng.setFileNameText(setText: "MMR-left-" + filenameTextField.stringValue)
+      self.R_csvMng.setFileNameText(setText: "MMR-right-" + filenameTextField.stringValue)
+      self.L_raw_csvMng.startRecording()
+      self.R_raw_csvMng.startRecording()
+      self.L_csvMng.startRecording()
+      self.R_csvMng.startRecording()
+      self.recordButton.title = "STOP"
     }
   }
   

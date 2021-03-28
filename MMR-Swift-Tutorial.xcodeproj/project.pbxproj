@@ -15,6 +15,7 @@
 		851B8A7325DD26E9003BD269 /* MMR_Swift_TutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B8A7225DD26E9003BD269 /* MMR_Swift_TutorialTests.swift */; };
 		851B8A7E25DD26E9003BD269 /* MMR_Swift_TutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B8A7D25DD26E9003BD269 /* MMR_Swift_TutorialUITests.swift */; };
 		851B8AD225E356BA003BD269 /* CsvManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B8AD125E356BA003BD269 /* CsvManager.swift */; };
+		8523E89D25F6EE69000C7FA3 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8523E89C25F6EE69000C7FA3 /* FrequencyCounter.swift */; };
 		95F72D4E9CC277E0D99968A7 /* Pods_MMR_Swift_Tutorial_MMR_Swift_TutorialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7A5423B41C760966ED010 /* Pods_MMR_Swift_Tutorial_MMR_Swift_TutorialUITests.framework */; };
 		F274C1309C65B247AA935053 /* Pods_MMR_Swift_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501137EC95303CE97AB16472 /* Pods_MMR_Swift_Tutorial.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		851B8A7D25DD26E9003BD269 /* MMR_Swift_TutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMR_Swift_TutorialUITests.swift; sourceTree = "<group>"; };
 		851B8A7F25DD26E9003BD269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851B8AD125E356BA003BD269 /* CsvManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvManager.swift; sourceTree = "<group>"; };
+		8523E89C25F6EE69000C7FA3 /* FrequencyCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCounter.swift; sourceTree = "<group>"; };
 		86873B30A674D8F5A02CA089 /* Pods-MMR-Swift-TutorialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMR-Swift-TutorialTests.debug.xcconfig"; path = "Target Support Files/Pods-MMR-Swift-TutorialTests/Pods-MMR-Swift-TutorialTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7B2A066D6C32716F8C58687 /* Pods_MMR_Swift_TutorialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMR_Swift_TutorialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26C12BC9553DD5E4DB73E72 /* Pods-MMR-Swift-TutorialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMR-Swift-TutorialTests.release.xcconfig"; path = "Target Support Files/Pods-MMR-Swift-TutorialTests/Pods-MMR-Swift-TutorialTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				851B8A6825DD26E9003BD269 /* Info.plist */,
 				851B8A6925DD26E9003BD269 /* MMR_Swift_Tutorial.entitlements */,
 				851B8AD125E356BA003BD269 /* CsvManager.swift */,
+				8523E89C25F6EE69000C7FA3 /* FrequencyCounter.swift */,
 			);
 			path = "MMR-Swift-Tutorial";
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				851B8A6225DD26E7003BD269 /* ViewController.swift in Sources */,
 				851B8AD225E356BA003BD269 /* CsvManager.swift in Sources */,
 				851B8A6025DD26E7003BD269 /* AppDelegate.swift in Sources */,
+				8523E89D25F6EE69000C7FA3 /* FrequencyCounter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
