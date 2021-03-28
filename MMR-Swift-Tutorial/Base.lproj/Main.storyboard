@@ -818,59 +818,189 @@
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLa-lN-g6T">
-                                <rect key="frame" x="14" y="289" width="81" height="32"/>
+                                <rect key="frame" x="14" y="13" width="83" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mvx-yn-aXD">
+                                <buttonCell key="cell" type="push" title="Record" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mvx-yn-aXD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="streamStartButtonPressed:" target="XfG-lQ-9wD" id="bDq-l4-Mlh"/>
+                                    <action selector="recordButtonPressed:" target="XfG-lQ-9wD" id="Zcc-bg-mgf"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lrj-0E-amQ">
-                                <rect key="frame" x="18" y="263" width="764" height="17"/>
+                                <rect key="frame" x="19" y="230" width="764" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="eaX-cH-7Ph">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Left acc" id="eaX-cH-7Ph">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwi-de-PC3">
-                                <rect key="frame" x="18" y="238" width="764" height="17"/>
+                                <rect key="frame" x="19" y="205" width="764" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="gOe-Ys-294">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Left gyro" id="gOe-Ys-294">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idL-kX-tys">
+                                <rect key="frame" x="19" y="267" width="36" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Right" id="8rl-qS-wKF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Foh-sH-ChE">
+                                <rect key="frame" x="19" y="52" width="59" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Filename" id="JVC-bO-0vs">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Why-vo-mfe">
+                                <rect key="frame" x="19" y="298" width="28" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Left" id="gjF-gb-bta">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-Mt-Hjf">
-                                <rect key="frame" x="18" y="213" width="764" height="17"/>
+                                <rect key="frame" x="19" y="141" width="764" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="FM4-4Q-aPQ">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Right acc" id="FM4-4Q-aPQ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmb-FX-nVa">
-                                <rect key="frame" x="18" y="188" width="764" height="17"/>
+                                <rect key="frame" x="19" y="116" width="764" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="h91-mp-Tl0">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Right gyro" id="h91-mp-Tl0">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQ3-yO-I4r">
+                                <rect key="frame" x="19" y="180" width="764" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Left BLE Freq" id="BiO-pt-xzF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GA5-X2-Mne">
+                                <rect key="frame" x="19" y="91" width="764" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Right BLE Freq" id="y9x-59-LUx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kji-7C-swk">
+                                <rect key="frame" x="59" y="292" width="343" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="bSz-yb-Obj">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="GAX-6u-3ks"/>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="za2-27-ymD">
+                                <rect key="frame" x="59" y="261" width="343" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="yMf-B5-u1V">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="QpD-5C-8jO"/>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocu-LG-PfQ">
+                                <rect key="frame" x="401" y="287" width="70" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O2p-Kq-4tb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="L_streamButtonPressed:" target="XfG-lQ-9wD" id="9aE-tN-tVc"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elz-bi-exk">
+                                <rect key="frame" x="401" y="256" width="70" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M9D-O2-9uY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="R_streamButtonPressed:" target="XfG-lQ-9wD" id="V6F-0o-sID"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4f-fc-Thc">
+                                <rect key="frame" x="84" y="50" width="216" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="nca-Rx-8Vu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACZ-CS-0sH">
+                                <rect key="frame" x="466" y="287" width="69" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AC5-h5-gSj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="L_StreamStopButtonPressed:" target="XfG-lQ-9wD" id="HGJ-0z-JV0"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNc-us-iYO">
+                                <rect key="frame" x="466" y="256" width="69" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ndz-pw-b5E">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="R_StreamStopButtonPressed:" target="XfG-lQ-9wD" id="3Xu-rD-eHY"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="L_FreqLabel" destination="EQ3-yO-I4r" id="v1L-M6-UI8"/>
+                        <outlet property="L_StreamButton" destination="Ocu-LG-PfQ" id="mcC-io-OZm"/>
+                        <outlet property="L_StreamPopUpButton" destination="Kji-7C-swk" id="fLw-bb-XHs"/>
+                        <outlet property="L_StreamPopupUpButton" destination="Kji-7C-swk" id="KEk-7e-L6B"/>
+                        <outlet property="L_StreamStopButton" destination="ACZ-CS-0sH" id="aDa-CG-wi6"/>
+                        <outlet property="L_freqLabel" destination="EQ3-yO-I4r" id="vdo-Pf-Vvq"/>
+                        <outlet property="R_FreqLabel" destination="GA5-X2-Mne" id="Zfo-Fq-EhC"/>
+                        <outlet property="R_StreamButton" destination="elz-bi-exk" id="8ay-Vc-jyc"/>
+                        <outlet property="R_StreamPopUpButton" destination="za2-27-ymD" id="DHn-ur-LdT"/>
+                        <outlet property="R_StreamStopButton" destination="WNc-us-iYO" id="xWz-Yl-7fL"/>
+                        <outlet property="R_freqLabel" destination="GA5-X2-Mne" id="3fc-rr-CKz"/>
                         <outlet property="charaLabel" destination="Lrj-0E-amQ" id="IWw-cf-etF"/>
                         <outlet property="charaLabel2" destination="cwi-de-PC3" id="cE6-8u-MXD"/>
                         <outlet property="charaLabel3" destination="FiT-Mt-Hjf" id="m2a-eU-Pg5"/>
                         <outlet property="charaLabel4" destination="tmb-FX-nVa" id="ZzX-3b-39O"/>
+                        <outlet property="filenameTextField" destination="F4f-fc-Thc" id="gyD-Jq-eig"/>
+                        <outlet property="leftFreqLabel" destination="EQ3-yO-I4r" id="tPf-DP-rFs"/>
+                        <outlet property="recordButton" destination="OLa-lN-g6T" id="32A-xY-xC7"/>
                         <outlet property="streamStartButton" destination="OLa-lN-g6T" id="gT2-F7-28j"/>
                         <outlet property="tableView" destination="v9H-Hu-M0t" id="hVT-MC-kR9"/>
                     </connections>

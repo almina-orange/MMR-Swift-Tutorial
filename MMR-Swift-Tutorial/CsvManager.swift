@@ -24,6 +24,9 @@ class CsvManager: NSObject {
   var failedCount = 0
   var samplingCount = 0
   
+  var timestamp = Date()
+  var textBuff = [String]()
+  
   // public weak var svc:SensorViewController!
   
   override init() {
@@ -37,15 +40,10 @@ class CsvManager: NSObject {
     isError = false
     failedCount = 0
     samplingCount = 0
+    timestamp = Date()
   }
   
-  func stopRecording() {
-    isRecording = false
-  }
-  
-  func addRecordText(addText:String) {
-    recordText += addText + "\n"
-  }
+  func stopRecording() { isRecording = false }
   
   func setSampleFrequency(setUpperFreq:String, setLowerFreq:String) {
     print("change sample frequency...")
@@ -53,20 +51,38 @@ class CsvManager: NSObject {
     lowerFreq = Int(setLowerFreq)!
   }
   
+  func addRecordText(addText:String) { recordText += addText + "\n" }
+  
+  func addRecordBuffer(addText:String) {
+    if self.isRecording { textBuff.append(addText) }
+    
+    // store sampled data per 1sec
+    let elapsedTime = NSDate().timeIntervalSince(timestamp)
+//    print(elapsedTime)
+    if elapsedTime > 1 {
+      self.addRecordTextArray(addTextArray: textBuff)
+      textBuff.removeAll()
+      timestamp = Date()
+    }
+  }
+  
   func addRecordTextArray(addTextArray:[String]) {
-    //      let sampleFreq = 50
+//      let sampleFreq = 50
     if addTextArray.count >= upperFreq {
+      // sampling
       var index: Float = 0.0
       let period: Float = Float(addTextArray.count-1) / Float(upperFreq-1)
       for _ in 1...upperFreq {
-        recordText += addTextArray[Int(index)] + "\n"  // sampling
+        recordText += addTextArray[Int(index)] + "\n"
         index += period
       }
       samplingCount += upperFreq
     } else if addTextArray.count >= lowerFreq {
-      for i in 0...addTextArray.count-1 { recordText += addTextArray[i] + "\n" }  // not sampling (record as raw)
+      // not sampling (record as raw)
+      for i in 0...addTextArray.count-1 { recordText += addTextArray[i] + "\n" }
       samplingCount += addTextArray.count
     } else {
+      // not recording
       isError = true
       failedCount += 1
       print("======")
@@ -74,7 +90,6 @@ class CsvManager: NSObject {
       print(addTextArray[0])
       print(addTextArray[addTextArray.count-1])
     }
-    //      print("レコード中")
   }
   
   func setHeaderText(setText: String) { headerText = setText }
