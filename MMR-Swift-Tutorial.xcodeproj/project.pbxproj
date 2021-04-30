@@ -49,7 +49,6 @@
 		851B8A6325DD26E9003BD269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		851B8A6625DD26E9003BD269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		851B8A6825DD26E9003BD269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		851B8A6925DD26E9003BD269 /* MMR_Swift_Tutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MMR_Swift_Tutorial.entitlements; sourceTree = "<group>"; };
 		851B8A6E25DD26E9003BD269 /* MMR-Swift-TutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MMR-Swift-TutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		851B8A7225DD26E9003BD269 /* MMR_Swift_TutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMR_Swift_TutorialTests.swift; sourceTree = "<group>"; };
 		851B8A7425DD26E9003BD269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		851B8A7F25DD26E9003BD269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851B8AD125E356BA003BD269 /* CsvManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvManager.swift; sourceTree = "<group>"; };
 		8523E89C25F6EE69000C7FA3 /* FrequencyCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCounter.swift; sourceTree = "<group>"; };
+		85B2A86D263BFE0500BE1F27 /* MMR-Swift-Tutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MMR-Swift-Tutorial.entitlements"; sourceTree = "<group>"; };
 		86873B30A674D8F5A02CA089 /* Pods-MMR-Swift-TutorialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMR-Swift-TutorialTests.debug.xcconfig"; path = "Target Support Files/Pods-MMR-Swift-TutorialTests/Pods-MMR-Swift-TutorialTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7B2A066D6C32716F8C58687 /* Pods_MMR_Swift_TutorialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMR_Swift_TutorialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26C12BC9553DD5E4DB73E72 /* Pods-MMR-Swift-TutorialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMR-Swift-TutorialTests.release.xcconfig"; path = "Target Support Files/Pods-MMR-Swift-TutorialTests/Pods-MMR-Swift-TutorialTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,12 +117,12 @@
 		851B8A5E25DD26E7003BD269 /* MMR-Swift-Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				85B2A86D263BFE0500BE1F27 /* MMR-Swift-Tutorial.entitlements */,
 				851B8A5F25DD26E7003BD269 /* AppDelegate.swift */,
 				851B8A6125DD26E7003BD269 /* ViewController.swift */,
 				851B8A6325DD26E9003BD269 /* Assets.xcassets */,
 				851B8A6525DD26E9003BD269 /* Main.storyboard */,
 				851B8A6825DD26E9003BD269 /* Info.plist */,
-				851B8A6925DD26E9003BD269 /* MMR_Swift_Tutorial.entitlements */,
 				851B8AD125E356BA003BD269 /* CsvManager.swift */,
 				8523E89C25F6EE69000C7FA3 /* FrequencyCounter.swift */,
 			);
@@ -243,6 +243,11 @@
 				TargetAttributes = {
 					851B8A5B25DD26E7003BD269 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					851B8A6D25DD26E9003BD269 = {
 						CreatedOnToolsVersion = 10.3;
@@ -578,6 +583,7 @@
 			baseConfigurationReference = 80B1ADB35B3B1EE7345486DE /* Pods-MMR-Swift-Tutorial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MMR-Swift-Tutorial/MMR-Swift-Tutorial.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "MMR-Swift-Tutorial/Info.plist";
@@ -596,6 +602,7 @@
 			baseConfigurationReference = 2D70ECF2CD330AEF82421763 /* Pods-MMR-Swift-Tutorial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MMR-Swift-Tutorial/MMR-Swift-Tutorial.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "MMR-Swift-Tutorial/Info.plist";

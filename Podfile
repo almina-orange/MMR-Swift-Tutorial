@@ -17,5 +17,6 @@ target 'MMR-Swift-Tutorial' do
   end
 
   pod "MetaWear", :subspecs => ['UI', 'AsyncUtils', 'Mocks', 'DFU']
+  pod 'SwiftOSC'
 
 end

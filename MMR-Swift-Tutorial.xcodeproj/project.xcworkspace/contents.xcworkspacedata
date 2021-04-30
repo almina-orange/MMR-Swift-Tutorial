@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MMR-Swift-Tutorial.xcodeproj">
+      location = "self:/Users/almina/Documents/work/MMR-Swift-Tutorial/MMR-Swift-Tutorial.xcodeproj">
    </FileRef>
 </Workspace>

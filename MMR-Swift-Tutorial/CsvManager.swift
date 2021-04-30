@@ -12,7 +12,7 @@ import Foundation
 class CsvManager: NSObject {
   
   private(set) var isRecording = false
-//  private var headerText = "timestamp,accX,accY,accZ,gyroX,gyroY,gyroZ"
+  //  private var headerText = "timestamp,accX,accY,accZ,gyroX,gyroY,gyroZ"
   private var headerText = "timestamp,accX,accY,accZ"
   private var recordText = ""
   private var fileName = ""
@@ -30,7 +30,7 @@ class CsvManager: NSObject {
   // public weak var svc:SensorViewController!
   
   override init() {
-    format.dateFormat = "yyyyMMddHHmmssSS"
+    format.dateFormat = "yyyyMMddHHmmssSSS"
   }
   
   func startRecording() {
@@ -58,7 +58,7 @@ class CsvManager: NSObject {
     
     // store sampled data per 1sec
     let elapsedTime = NSDate().timeIntervalSince(timestamp)
-//    print(elapsedTime)
+    //    print(elapsedTime)
     if elapsedTime > 1 {
       self.addRecordTextArray(addTextArray: textBuff)
       textBuff.removeAll()
@@ -67,7 +67,30 @@ class CsvManager: NSObject {
   }
   
   func addRecordTextArray(addTextArray:[String]) {
-//      let sampleFreq = 50
+    //      let sampleFreq = 50
+    //    if addTextArray.count >= upperFreq {
+    //      // sampling
+    //      var index: Float = 0.0
+    //      let period: Float = Float(addTextArray.count-1) / Float(upperFreq-1)
+    //      for _ in 1...upperFreq {
+    //        recordText += addTextArray[Int(index)] + "\n"
+    //        index += period
+    //      }
+    //      samplingCount += upperFreq
+    //    } else if addTextArray.count >= lowerFreq {
+    //      // not sampling (record as raw)
+    //      for i in 0...addTextArray.count-1 { recordText += addTextArray[i] + "\n" }
+    //      samplingCount += addTextArray.count
+    //    } else {
+    //      // not recording
+    //      isError = true
+    //      failedCount += 1
+    //      print("======")
+    //      print("failed!: " + String(addTextArray.count))
+    //      print(addTextArray[0])
+    //      print(addTextArray[addTextArray.count-1])
+    //    }
+    
     if addTextArray.count >= upperFreq {
       // sampling
       var index: Float = 0.0
@@ -77,18 +100,10 @@ class CsvManager: NSObject {
         index += period
       }
       samplingCount += upperFreq
-    } else if addTextArray.count >= lowerFreq {
+    } else {
       // not sampling (record as raw)
       for i in 0...addTextArray.count-1 { recordText += addTextArray[i] + "\n" }
       samplingCount += addTextArray.count
-    } else {
-      // not recording
-      isError = true
-      failedCount += 1
-      print("======")
-      print("failed!: " + String(addTextArray.count))
-      print(addTextArray[0])
-      print(addTextArray[addTextArray.count-1])
     }
   }
   
