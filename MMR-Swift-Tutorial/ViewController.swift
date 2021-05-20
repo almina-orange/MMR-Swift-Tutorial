@@ -60,6 +60,9 @@ var L_freqTextBuff: String = "" {
       freqTextBuff += "Hz"
       DispatchQueue.main.async { vc.L_FreqLabel.stringValue = freqTextBuff }
     }
+    if vc.L_raw_csvMng.isRecording {
+      DispatchQueue.main.async { vc.timerLabel.stringValue = "timer: " + String(format: "%.2f", NSDate().timeIntervalSince(vc.timestamp)) }
+    }
   }
 }
 var R_freqTextBuff: String = "" {
@@ -71,7 +74,28 @@ var R_freqTextBuff: String = "" {
       freqTextBuff += "Hz"
       DispatchQueue.main.async { vc.R_FreqLabel.stringValue = freqTextBuff }
     }
+    if vc.L_raw_csvMng.isRecording {
+      DispatchQueue.main.async { vc.timerLabel.stringValue = "timer: " + String(format: "%.2f", NSDate().timeIntervalSince(vc.timestamp)) }
+    }
   }
+}
+
+var L_accYValueBuff: Float = 0.0 {
+  didSet { DispatchQueue.main.async {
+    vc.L_accYGraphLabel.stringValue = "(L) [acc-y]: "
+    for _ in 0...Int(abs(L_accYValueBuff * 10.0)) {
+      vc.L_accYGraphLabel.stringValue += "/"
+    }
+  } }
+}
+
+var R_accYValueBuff: Float = 0.0 {
+  didSet { DispatchQueue.main.async {
+    vc.R_accYGraphLabel.stringValue = "(L) [acc-y]: "
+    for _ in 0...Int(abs(R_accYValueBuff * 10.0)) {
+      vc.R_accYGraphLabel.stringValue += "/"
+    }
+    } }
 }
 
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
@@ -94,6 +118,11 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
   
   @IBOutlet weak var filenameTextField: NSTextField!
   
+  @IBOutlet weak var L_accYGraphLabel: NSTextField!
+  @IBOutlet weak var R_accYGraphLabel: NSTextField!
+  
+  @IBOutlet weak var timerLabel: NSTextField!
+  
   var scannerModel: ScannerModel!
   //  var L_freqCounter = FrequencyCounter()
   //  var R_freqCounter = FrequencyCounter()
@@ -105,6 +134,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
   let R_raw_csvMng = CsvManager()
   let L_csvMng = CsvManager()
   let R_csvMng = CsvManager()
+  
+  var timestamp = Date()
   
   // MARK: View Life Cycle
   override func viewDidLoad() {
@@ -128,6 +159,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     self.R_raw_csvMng.setFileNameText(setText: "MMR-right-raw")
     self.L_csvMng.setFileNameText(setText: "MMR-left")
     self.R_csvMng.setFileNameText(setText: "MMR-right")
+    
+    timestamp = Date()
   }
   
   override func viewWillAppear() {
@@ -406,6 +439,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         L_raw_accRecordTextBuff = accRecordText
         L_accRecordTextBuff = accRecordText
         L_freqTextBuff = "---"  // just trigger
+        L_accYValueBuff = acceleration.y
       }
       
       mbl_mw_acc_enable_acceleration_sampling(device.board)
@@ -472,6 +506,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
           R_raw_accRecordTextBuff = accRecordText
           R_accRecordTextBuff = accRecordText
           R_freqTextBuff = "---"  // just trigger
+          R_accYValueBuff = acceleration.y
         }
         
         mbl_mw_acc_enable_acceleration_sampling(device.board)
@@ -525,6 +560,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
       self.L_csvMng.startRecording()
       self.R_csvMng.startRecording()
       self.recordButton.title = "STOP"
+      timestamp = Date()
+      self.timerLabel.stringValue = "timer: " + String(NSDate().timeIntervalSince(timestamp))
     }
   }
   

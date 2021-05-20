@@ -837,6 +837,24 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eU3-vI-kih">
+                                <rect key="frame" x="452" y="52" width="330" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Left acc-y" id="bDR-Uc-S7Y">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g8P-7v-U1N">
+                                <rect key="frame" x="452" y="27" width="330" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Right acc-y" id="vWV-Jv-QS0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwi-de-PC3">
                                 <rect key="frame" x="19" y="205" width="764" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -980,6 +998,15 @@
                                     <action selector="R_StreamStopButtonPressed:" target="XfG-lQ-9wD" id="3Xu-rD-eHY"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EMN-1I-9vW">
+                                <rect key="frame" x="110" y="22" width="192" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="timer:" id="9fi-sH-LjG">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -988,11 +1015,13 @@
                         <outlet property="L_StreamPopUpButton" destination="Kji-7C-swk" id="fLw-bb-XHs"/>
                         <outlet property="L_StreamPopupUpButton" destination="Kji-7C-swk" id="KEk-7e-L6B"/>
                         <outlet property="L_StreamStopButton" destination="ACZ-CS-0sH" id="aDa-CG-wi6"/>
+                        <outlet property="L_accYGraphLabel" destination="eU3-vI-kih" id="v95-IB-7Z9"/>
                         <outlet property="L_freqLabel" destination="EQ3-yO-I4r" id="vdo-Pf-Vvq"/>
                         <outlet property="R_FreqLabel" destination="GA5-X2-Mne" id="Zfo-Fq-EhC"/>
                         <outlet property="R_StreamButton" destination="elz-bi-exk" id="8ay-Vc-jyc"/>
                         <outlet property="R_StreamPopUpButton" destination="za2-27-ymD" id="DHn-ur-LdT"/>
                         <outlet property="R_StreamStopButton" destination="WNc-us-iYO" id="xWz-Yl-7fL"/>
+                        <outlet property="R_accYGraphLabel" destination="g8P-7v-U1N" id="3Ks-bN-79C"/>
                         <outlet property="R_freqLabel" destination="GA5-X2-Mne" id="3fc-rr-CKz"/>
                         <outlet property="charaLabel" destination="Lrj-0E-amQ" id="IWw-cf-etF"/>
                         <outlet property="charaLabel2" destination="cwi-de-PC3" id="cE6-8u-MXD"/>
@@ -1003,6 +1032,7 @@
                         <outlet property="recordButton" destination="OLa-lN-g6T" id="32A-xY-xC7"/>
                         <outlet property="streamStartButton" destination="OLa-lN-g6T" id="gT2-F7-28j"/>
                         <outlet property="tableView" destination="v9H-Hu-M0t" id="hVT-MC-kR9"/>
+                        <outlet property="timerLabel" destination="EMN-1I-9vW" id="VU4-up-fGu"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
