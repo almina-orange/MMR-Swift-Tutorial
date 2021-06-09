@@ -198,6 +198,7 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Bolts-Swift/BoltsSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MetaWear/MetaWear.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftOSC/SwiftOSC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework"
@@ -205,6 +206,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Bolts-Swift/BoltsSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MetaWear/MetaWear.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftOSC/SwiftOSC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework"

@@ -9,6 +9,7 @@
 import Cocoa
 import MetaWear
 import MetaWearCpp
+import CorePlot
 
 // MARK:
 //   The following method may cause serious errors.
@@ -80,21 +81,36 @@ var R_freqTextBuff: String = "" {
   }
 }
 
-var L_accYValueBuff: Float = 0.0 {
+var L_accXPlotValueBuff: Float = 0.0 {
   didSet { DispatchQueue.main.async {
-    vc.L_accYGraphLabel.stringValue = "(L) [acc-y]: "
-    for _ in 0...Int(abs(L_accYValueBuff * 10.0)) {
-      vc.L_accYGraphLabel.stringValue += "/"
-    }
+    vc.lxPlotData.append(L_accXPlotValueBuff)
   } }
 }
-
-var R_accYValueBuff: Float = 0.0 {
+var L_accYPlotValueBuff: Float = 0.0 {
   didSet { DispatchQueue.main.async {
-    vc.R_accYGraphLabel.stringValue = "(L) [acc-y]: "
-    for _ in 0...Int(abs(R_accYValueBuff * 10.0)) {
-      vc.R_accYGraphLabel.stringValue += "/"
-    }
+    vc.lyPlotData.append(L_accYPlotValueBuff)
+    } }
+}
+var L_accZPlotValueBuff: Float = 0.0 {
+  didSet { DispatchQueue.main.async {
+    vc.lzPlotData.append(L_accZPlotValueBuff)
+    vc.L_plotAcc(point: L_accZPlotValueBuff)
+    } }
+}
+var R_accXPlotValueBuff: Float = 0.0 {
+  didSet { DispatchQueue.main.async {
+    vc.rxPlotData.append(R_accXPlotValueBuff)
+    } }
+}
+var R_accYPlotValueBuff: Float = 0.0 {
+  didSet { DispatchQueue.main.async {
+    vc.ryPlotData.append(R_accYPlotValueBuff)
+    } }
+}
+var R_accZPlotValueBuff: Float = 0.0 {
+  didSet { DispatchQueue.main.async {
+    vc.rzPlotData.append(R_accZPlotValueBuff)
+    vc.R_plotAcc(point: R_accZPlotValueBuff)
     } }
 }
 
@@ -137,6 +153,35 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
   
   var timestamp = Date()
   
+  var maxDataPoints = 300
+  @IBOutlet weak var L_cptGraphHostingView: CPTGraphHostingView!
+  @IBOutlet weak var R_cptGraphHostingView: CPTGraphHostingView!
+  
+  fileprivate struct PlotIdentifier {
+    static let lx = "lxPlot"
+    static let ly = "lyPlot"
+    static let lz = "lzPlot"
+    static let rx = "rxPlot"
+    static let ry = "ryPlot"
+    static let rz = "rzPlot"
+  }
+  
+  fileprivate struct ZPosition {
+    static let lxPlot: CGFloat = 3.0
+    static let lyPlot: CGFloat = 2.0
+    static let lzPlot: CGFloat = 1.0
+    static let rxPlot: CGFloat = 3.0
+    static let ryPlot: CGFloat = 2.0
+    static let rzPlot: CGFloat = 1.0
+  }
+  
+  var lxPlotData = [Float](repeating: 0.0, count: 300)
+  var lyPlotData = [Float](repeating: 0.0, count: 300)
+  var lzPlotData = [Float](repeating: 0.0, count: 300)
+  var rxPlotData = [Float](repeating: 0.0, count: 300)
+  var ryPlotData = [Float](repeating: 0.0, count: 300)
+  var rzPlotData = [Float](repeating: 0.0, count: 300)
+  
   // MARK: View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -161,6 +206,264 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     self.R_csvMng.setFileNameText(setText: "MMR-right")
     
     timestamp = Date()
+    
+    initializeGraph()
+  }
+  
+  func initializeGraph(){
+    configureGraphView()
+    configureGraphAxis()
+    configurePlot()
+  }
+  
+  func configureGraphView(){
+    L_cptGraphHostingView.allowPinchScaling = false
+    R_cptGraphHostingView.allowPinchScaling = false
+  }
+  
+  func configureGraphAxis(){
+    //Configure graph
+    let graph = CPTXYGraph(frame: L_cptGraphHostingView.bounds)
+    graph.plotAreaFrame?.masksToBorder = false
+    L_cptGraphHostingView.hostedGraph = graph
+    graph.backgroundColor = NSColor(red: 0.215, green: 0.215, blue: 0.215, alpha: 1.0).cgColor
+    graph.paddingBottom = 40.0
+    graph.paddingLeft = 40.0
+    graph.paddingTop = 30.0
+    graph.paddingRight = 15.0
+    
+    //Style for graph title
+    let titleStyle = CPTMutableTextStyle()
+    titleStyle.color = CPTColor.white()
+    titleStyle.fontName = "HelveticaNeue-Bold"
+    titleStyle.fontSize = 20.0
+    titleStyle.textAlignment = .center
+    graph.titleTextStyle = titleStyle
+    
+    //Set graph title
+    let title = "Left Acc"
+    graph.title = title
+    graph.titlePlotAreaFrameAnchor = .top
+    graph.titleDisplacement = CGPoint(x: 0.0, y: 0.0)
+    
+    let axisSet = graph.axisSet as! CPTXYAxisSet
+    
+    let axisTextStyle = CPTMutableTextStyle()
+    axisTextStyle.color = CPTColor.white()
+    axisTextStyle.fontName = "HelveticaNeue-Bold"
+    axisTextStyle.fontSize = 10.0
+    axisTextStyle.textAlignment = .center
+    let lineStyle = CPTMutableLineStyle()
+    lineStyle.lineColor = CPTColor.white()
+    lineStyle.lineWidth = 5
+    let gridLineStyle = CPTMutableLineStyle()
+    gridLineStyle.lineColor = CPTColor.gray()
+    gridLineStyle.lineWidth = 0.5
+    
+    if let x = axisSet.xAxis {
+      x.majorIntervalLength   = 50
+      x.minorTicksPerInterval = 5
+      x.labelTextStyle = axisTextStyle
+      x.minorGridLineStyle = gridLineStyle
+      x.axisLineStyle = lineStyle
+      x.axisConstraints = CPTConstraints(lowerOffset: 0.0)
+      x.delegate = self
+    }
+    
+    if let y = axisSet.yAxis {
+      y.majorIntervalLength   = 2.0
+      y.minorTicksPerInterval = 5
+      y.minorGridLineStyle = gridLineStyle
+      y.labelTextStyle = axisTextStyle
+      y.alternatingBandFills = [CPTFill(color: CPTColor.init(componentRed: 255, green: 255, blue: 255, alpha: 0.03)),CPTFill(color: CPTColor.black())]
+      y.axisLineStyle = lineStyle
+      y.axisConstraints = CPTConstraints(lowerOffset: 0.0)
+      y.delegate = self
+    }
+    
+    // Set plot space
+    let xMin = 0.0
+    let xMax = 300.0
+    let yMin = -8.0
+    let yMax = 8.0
+    guard let plotSpace = graph.defaultPlotSpace as? CPTXYPlotSpace else { return }
+    plotSpace.xRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(xMin), lengthDecimal: CPTDecimalFromDouble(xMax - xMin))
+    plotSpace.yRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(yMin), lengthDecimal: CPTDecimalFromDouble(yMax - yMin))
+
+
+    //Configure graph
+    let rGraph = CPTXYGraph(frame: R_cptGraphHostingView.bounds)
+    rGraph.plotAreaFrame?.masksToBorder = false
+    R_cptGraphHostingView.hostedGraph = rGraph
+    rGraph.backgroundColor = NSColor(red: 0.215, green: 0.215, blue: 0.215, alpha: 1.0).cgColor
+    rGraph.paddingBottom = 40.0
+    rGraph.paddingLeft = 40.0
+    rGraph.paddingTop = 30.0
+    rGraph.paddingRight = 15.0
+
+    //Style for graph title
+    rGraph.titleTextStyle = titleStyle
+
+    //Set graph title
+    let rTitle = "Right Acc"
+    rGraph.title = rTitle
+    rGraph.titlePlotAreaFrameAnchor = .top
+    rGraph.titleDisplacement = CGPoint(x: 0.0, y: 0.0)
+
+    let rAxisSet = rGraph.axisSet as! CPTXYAxisSet
+
+    if let x = rAxisSet.xAxis {
+      x.majorIntervalLength   = 50
+      x.minorTicksPerInterval = 5
+      x.labelTextStyle = axisTextStyle
+      x.minorGridLineStyle = gridLineStyle
+      x.axisLineStyle = lineStyle
+      x.axisConstraints = CPTConstraints(lowerOffset: 0.0)
+      x.delegate = self
+    }
+
+    if let y = rAxisSet.yAxis {
+      y.majorIntervalLength   = 2.0
+      y.minorTicksPerInterval = 5
+      y.minorGridLineStyle = gridLineStyle
+      y.labelTextStyle = axisTextStyle
+      y.alternatingBandFills = [CPTFill(color: CPTColor.init(componentRed: 255, green: 255, blue: 255, alpha: 0.03)),CPTFill(color: CPTColor.black())]
+      y.axisLineStyle = lineStyle
+      y.axisConstraints = CPTConstraints(lowerOffset: 0.0)
+      y.delegate = self
+    }
+
+    // Set plot space
+    guard let rPlotSpace = rGraph.defaultPlotSpace as? CPTXYPlotSpace else { return }
+    rPlotSpace.xRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(xMin), lengthDecimal: CPTDecimalFromDouble(xMax - xMin))
+    rPlotSpace.yRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(yMin), lengthDecimal: CPTDecimalFromDouble(yMax - yMin))
+  }
+  
+  func configurePlot(){
+    guard let graph = L_cptGraphHostingView.hostedGraph else { return }
+    
+    let lxPlot: CPTScatterPlot = CPTScatterPlot()
+    let lxPlotLineStile = CPTMutableLineStyle()
+    lxPlotLineStile.lineJoin = .round
+    lxPlotLineStile.lineCap = .round
+    lxPlotLineStile.lineWidth = 2
+    lxPlotLineStile.lineColor = CPTColor.red()
+    lxPlot.identifier = PlotIdentifier.lx as NSString
+    lxPlot.zPosition = ZPosition.lxPlot
+    lxPlot.dataSource = (self as CPTPlotDataSource)
+    lxPlot.delegate = (self as CALayerDelegate)
+    lxPlot.dataLineStyle = lxPlotLineStile
+    graph.add(lxPlot, to: graph.defaultPlotSpace)
+    
+    let lyPlot: CPTScatterPlot = CPTScatterPlot()
+    let lyPlotLineStile = CPTMutableLineStyle()
+    lyPlotLineStile.lineJoin = .round
+    lyPlotLineStile.lineCap = .round
+    lyPlotLineStile.lineWidth = 2
+    lyPlotLineStile.lineColor = CPTColor.blue()
+    lyPlot.identifier = PlotIdentifier.ly as NSString
+    lyPlot.zPosition = ZPosition.lyPlot
+    lyPlot.dataSource = self
+    lyPlot.dataLineStyle = lyPlotLineStile
+    graph.add(lyPlot, to: graph.defaultPlotSpace)
+
+    let lzPlot: CPTScatterPlot = CPTScatterPlot()
+    let lzPlotLineStile = CPTMutableLineStyle()
+    lzPlotLineStile.lineJoin = .round
+    lzPlotLineStile.lineCap = .round
+    lzPlotLineStile.lineWidth = 2
+    lzPlotLineStile.lineColor = CPTColor.green()
+    lzPlot.identifier = PlotIdentifier.lz as NSString
+    lzPlot.zPosition = ZPosition.lzPlot
+    lzPlot.dataSource = self
+    lzPlot.dataLineStyle = lzPlotLineStile
+    graph.add(lzPlot, to: graph.defaultPlotSpace)
+    
+
+    guard let rGraph = R_cptGraphHostingView.hostedGraph else { return }
+
+    let rxPlot: CPTScatterPlot = CPTScatterPlot()
+    let rxPlotLineStile = CPTMutableLineStyle()
+    rxPlotLineStile.lineJoin = .round
+    rxPlotLineStile.lineCap = .round
+    rxPlotLineStile.lineWidth = 2
+    rxPlotLineStile.lineColor = CPTColor.red()
+    rxPlot.identifier = PlotIdentifier.rx as NSString
+    rxPlot.zPosition = ZPosition.rxPlot
+    rxPlot.dataSource = (self as CPTPlotDataSource)
+    rxPlot.delegate = (self as CALayerDelegate)
+    rxPlot.dataLineStyle = rxPlotLineStile
+    rGraph.add(rxPlot, to: rGraph.defaultPlotSpace)
+
+    let ryPlot: CPTScatterPlot = CPTScatterPlot()
+    let ryPlotLineStile = CPTMutableLineStyle()
+    ryPlotLineStile.lineJoin = .round
+    ryPlotLineStile.lineCap = .round
+    ryPlotLineStile.lineWidth = 2
+    ryPlotLineStile.lineColor = CPTColor.blue()
+    ryPlot.identifier = PlotIdentifier.ry as NSString
+    ryPlot.zPosition = ZPosition.ryPlot
+    ryPlot.dataSource = self
+    ryPlot.dataLineStyle = ryPlotLineStile
+    rGraph.add(ryPlot, to: rGraph.defaultPlotSpace)
+
+    let rzPlot: CPTScatterPlot = CPTScatterPlot()
+    let rzPlotLineStile = CPTMutableLineStyle()
+    rzPlotLineStile.lineJoin = .round
+    rzPlotLineStile.lineCap = .round
+    rzPlotLineStile.lineWidth = 2
+    rzPlotLineStile.lineColor = CPTColor.green()
+    rzPlot.identifier = PlotIdentifier.rz as NSString
+    rzPlot.zPosition = ZPosition.rzPlot
+    rzPlot.dataSource = self
+    rzPlot.dataLineStyle = rzPlotLineStile
+    rGraph.add(rzPlot, to: rGraph.defaultPlotSpace)
+  }
+  
+  func L_plotAcc(point: Float){
+    if(self.lxPlotData.count >= maxDataPoints){
+//      print("L_delete")
+      configureGraphAxis()
+      configurePlot()
+      self.lxPlotData.removeFirst()
+      self.lyPlotData.removeFirst()
+      self.lzPlotData.removeFirst()
+    }
+    
+    let lxGraph = self.L_cptGraphHostingView.hostedGraph
+    let lxPlot = lxGraph?.plot(withIdentifier: PlotIdentifier.lx as NSCopying)
+    lxPlot?.insertData(at: UInt(self.lxPlotData.count-1), numberOfRecords: 1)
+    
+    let lyGraph = self.L_cptGraphHostingView.hostedGraph
+    let lyPlot = lyGraph?.plot(withIdentifier: PlotIdentifier.ly as NSCopying)
+    lyPlot?.insertData(at: UInt(self.lyPlotData.count-1), numberOfRecords: 1)
+    
+    let lzGraph = self.L_cptGraphHostingView.hostedGraph
+    let lzPlot = lzGraph?.plot(withIdentifier: PlotIdentifier.lz as NSCopying)
+    lzPlot?.insertData(at: UInt(self.lzPlotData.count-1), numberOfRecords: 1)
+  }
+  
+  func R_plotAcc(point: Float){
+    if(self.rxPlotData.count >= maxDataPoints){
+//      print("R_delete")
+      configureGraphAxis()
+      configurePlot()
+      self.rxPlotData.removeFirst()
+      self.ryPlotData.removeFirst()
+      self.rzPlotData.removeFirst()
+    }
+
+    let rxGraph = self.R_cptGraphHostingView.hostedGraph
+    let rxPlot = rxGraph?.plot(withIdentifier: PlotIdentifier.rx as NSCopying)
+    rxPlot?.insertData(at: UInt(self.rxPlotData.count-1), numberOfRecords: 1)
+
+    let ryGraph = self.R_cptGraphHostingView.hostedGraph
+    let ryPlot = ryGraph?.plot(withIdentifier: PlotIdentifier.ry as NSCopying)
+    ryPlot?.insertData(at: UInt(self.ryPlotData.count-1), numberOfRecords: 1)
+
+    let rzGraph = self.R_cptGraphHostingView.hostedGraph
+    let rzPlot = rzGraph?.plot(withIdentifier: PlotIdentifier.rz as NSCopying)
+    rzPlot?.insertData(at: UInt(self.rzPlotData.count-1), numberOfRecords: 1)
   }
   
   override func viewWillAppear() {
@@ -439,7 +742,9 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         L_raw_accRecordTextBuff = accRecordText
         L_accRecordTextBuff = accRecordText
         L_freqTextBuff = "---"  // just trigger
-        L_accYValueBuff = acceleration.y
+        L_accXPlotValueBuff = acceleration.x
+        L_accYPlotValueBuff = acceleration.y
+        L_accZPlotValueBuff = acceleration.z
       }
       
       mbl_mw_acc_enable_acceleration_sampling(device.board)
@@ -506,7 +811,10 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
           R_raw_accRecordTextBuff = accRecordText
           R_accRecordTextBuff = accRecordText
           R_freqTextBuff = "---"  // just trigger
-          R_accYValueBuff = acceleration.y
+//          R_accYPlotValueBuff = acceleration.y
+          R_accXPlotValueBuff = acceleration.x
+          R_accYPlotValueBuff = acceleration.y
+          R_accZPlotValueBuff = acceleration.z
         }
         
         mbl_mw_acc_enable_acceleration_sampling(device.board)
@@ -653,5 +961,28 @@ extension ViewController: ScannerModelDelegate {
   }
   
   func scannerModel(_ scannerModel: ScannerModel, errorDidOccur error: Error) {
+  }
+}
+
+extension ViewController: CPTScatterPlotDataSource, CPTScatterPlotDelegate {
+  func numberOfRecords(for plot: CPTPlot) -> UInt {
+    return UInt(self.maxDataPoints)
+  }
+  
+  func number(for plot: CPTPlot, field: UInt, record: UInt) -> Any? {
+    switch CPTScatterPlotField(rawValue: Int(field))! {
+    case .X:
+      return NSNumber(value: Int(record))
+    case .Y:
+      if plot.identifier!.isEqual(PlotIdentifier.lx) { return self.lxPlotData[Int(record)] as NSNumber }
+      if plot.identifier!.isEqual(PlotIdentifier.ly) { return self.lyPlotData[Int(record)] as NSNumber }
+      if plot.identifier!.isEqual(PlotIdentifier.lz) { return self.lzPlotData[Int(record)] as NSNumber }
+      if plot.identifier!.isEqual(PlotIdentifier.rx) { return self.rxPlotData[Int(record)] as NSNumber }
+      if plot.identifier!.isEqual(PlotIdentifier.ry) { return self.ryPlotData[Int(record)] as NSNumber }
+      if plot.identifier!.isEqual(PlotIdentifier.rz) { return self.rzPlotData[Int(record)] as NSNumber }
+      return 0.0 as NSNumber
+    default:
+      return 0
+    }
   }
 }

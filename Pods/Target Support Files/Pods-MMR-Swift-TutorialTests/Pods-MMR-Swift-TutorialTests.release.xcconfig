@@ -1,7 +1,7 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bolts-Swift" "${PODS_CONFIGURATION_BUILD_DIR}/MetaWear" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftOSC" "${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation" "${PODS_CONFIGURATION_BUILD_DIR}/iOSDFULibrary"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bolts-Swift" "${PODS_CONFIGURATION_BUILD_DIR}/CorePlot" "${PODS_CONFIGURATION_BUILD_DIR}/MetaWear" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftOSC" "${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation" "${PODS_CONFIGURATION_BUILD_DIR}/iOSDFULibrary"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bolts-Swift/BoltsSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MetaWear/MetaWear.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftOSC/SwiftOSC.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation/ZIPFoundation.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/iOSDFULibrary/iOSDFULibrary.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "BoltsSwift" -framework "CoreBluetooth" -framework "MetaWear" -framework "SwiftOSC" -framework "ZIPFoundation" -framework "iOSDFULibrary"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bolts-Swift/BoltsSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CorePlot/CorePlot.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MetaWear/MetaWear.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftOSC/SwiftOSC.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation/ZIPFoundation.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/iOSDFULibrary/iOSDFULibrary.framework/Headers" "${PODS_ROOT}/Headers/Private/CorePlot/osx"
+OTHER_LDFLAGS = $(inherited) -framework "BoltsSwift" -framework "Cocoa" -framework "CoreBluetooth" -framework "CorePlot" -framework "MetaWear" -framework "QuartzCore" -framework "SwiftOSC" -framework "ZIPFoundation" -framework "iOSDFULibrary"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
